@@ -172,7 +172,7 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 }
 
 .logo { display: flex; align-items: center; gap: 12px; line-height: 1; }
-.logo__icon { width: 34px; height: 34px; flex: none; color: var(--terracota); }
+.logo__icon { width: 34px; height: 34px; flex: none; object-fit: contain; }
 .logo__texto { display: flex; flex-direction: column; }
 .logo__nombre { font-family: var(--display); font-size: 24px; font-weight: 800; letter-spacing: -.01em; color: var(--marron); }
 .logo__bajada {
@@ -803,7 +803,6 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   border-bottom: 1px solid rgba(250, 243, 236, .14);
 }
 .footer .logo { margin-bottom: 24px; }
-.footer .logo__icon { color: var(--terracota-claro); }
 .footer .logo__nombre { font-size: 28px; font-weight: 800; color: var(--crema); }
 .footer .logo__bajada { font-size: 9px; letter-spacing: .38em; color: var(--terracota-claro); margin-top: 8px; }
 .footer__texto { margin: 0; max-width: 34ch; font-size: 15px; line-height: 1.75; }
