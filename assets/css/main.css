@@ -379,7 +379,7 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 .esencia__cifras .dato__valor { font-family: var(--acento); font-size: 54px; color: var(--terracota); }
 .esencia__cifras .dato__label { font-size: 11px; }
 
-.esencia__media { position: relative; }
+.esencia__media { position: relative; isolation: isolate; }
 .esencia__media::before {
   content: '';
   position: absolute;

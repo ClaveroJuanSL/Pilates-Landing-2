@@ -68,6 +68,7 @@
 
   function initParallax() {
     if (reduce) return null;
+    if (window.matchMedia('(max-width: 780px)').matches) return null;
 
     var hero = document.querySelector('[data-parallax="hero"]');
     var esencia = document.querySelector('[data-parallax="esencia"]');
