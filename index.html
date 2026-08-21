@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equilibrate Studio Pilates, Mitre 502</title>
+  <meta name="description" content="Estudio de Pilates con 14 años de experiencia. Bienestar integral, atención personalizada y clases para todos. Mitre 502, Edificio Don Jorge.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
+    <symbol id="logo-icon" viewBox="0 0 100 100" fill="currentColor">
+      <circle cx="50" cy="14" r="6"></circle>
+      <path d="M50 22C40 26 33 36 35 47C36 54 43 60 50 63C57 60 64 54 65 47C67 36 60 26 50 22Z"></path>
+      <path d="M50 63C39 65 27 68 18 76C11 82 13 91 22 93C33 95 46 86 50 71C51 68 51 65 50 63Z"></path>
+      <path d="M50 63C61 65 73 68 82 76C89 82 87 91 78 93C67 95 54 86 50 71C49 68 49 65 50 63Z"></path>
+    </symbol>
+  </svg>
+
+  <header class="header" data-header>
+    <a class="logo" href="#inicio">
+      <svg class="logo__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-icon"></use></svg>
+      <span class="logo__texto">
+        <span class="logo__nombre">Equilibrate</span>
+        <span class="logo__bajada">Studio Pilates</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav">Menú</button>
+    <nav class="nav" id="nav" data-nav>
+      <a class="nav__link" href="#esencia">Esencia</a>
+      <a class="nav__link" href="#porque">Por qué</a>
+      <a class="nav__link" href="#galeria">Espacios</a>
+      <a class="nav__link" href="#comunidad">Comunidad</a>
+      <a class="nav__link" href="#visitanos">Visitanos</a>
+      <a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+  </header>
+
+  <!-- A. HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__halo hero__halo--1"></div>
+    <div class="hero__halo hero__halo--2"></div>
+
+    <div class="contenedor hero__inner">
+      <div>
+        <div class="hero__kicker" data-reveal>
+          <span></span>
+          <span>Desde 2012 · Mitre 502</span>
+        </div>
+        <h1 class="hero__titulo" data-reveal>Tu momento de <em>moverte</em>.</h1>
+        <p class="hero__subtitulo" data-reveal>La constancia también se entrena: pilates para cada cuerpo, en su propio ritmo, en Mitre 502.</p>
+        <div class="hero__acciones" data-reveal>
+          <a class="btn btn--primario" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reservar mi primera clase</a>
+          <a class="btn btn--fantasma" href="#esencia">Conocer el estudio</a>
+        </div>
+        <div class="hero__datos" data-reveal>
+          <div class="dato"><span class="dato__valor">14</span><span class="dato__label">Años</span></div>
+          <span class="divisor"></span>
+          <div class="dato"><span class="dato__valor">7</span><span class="dato__label">Instructoras</span></div>
+          <span class="divisor"></span>
+          <div class="dato"><span class="dato__valor">2</span><span class="dato__label">Salas</span></div>
+        </div>
+      </div>
+
+      <div class="hero__media" data-parallax="hero">
+        <div class="hero__marco" data-historia>
+          <div class="hero__historia-barra" data-historia-barra>
+            <span class="hero__historia-seg"><span class="hero__historia-fill"></span></span>
+            <span class="hero__historia-seg"><span class="hero__historia-fill"></span></span>
+            <span class="hero__historia-seg"><span class="hero__historia-fill"></span></span>
+          </div>
+          <div class="hero__historia-track">
+            <div class="hero__historia-riel" data-historia-riel>
+              <img class="hero__historia-slide" src="assets/img/hero.jpg" alt="Clase de pilates en Equilibrate">
+              <img class="hero__historia-slide" src="assets/img/movimiento.png" alt="Alumna en movimiento durante una clase">
+              <img class="hero__historia-slide" src="assets/img/reformer-luz.png" alt="Ejercicio de pilates en el reformer">
+            </div>
+          </div>
+          <button class="hero__historia-nav hero__historia-nav--prev" type="button" data-historia-prev aria-label="Imagen anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="hero__historia-nav hero__historia-nav--next" type="button" data-historia-next aria-label="Imagen siguiente">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="hero__pill"><span class="punto"></span><span>Grupos reducidos</span></div>
+      </div>
+    </div>
+
+    <div class="hero__scroll"><span>Scroll</span><span></span></div>
+  </section>
+
+  <!-- B. NUESTRA ESENCIA -->
+  <section class="seccion esencia" id="esencia">
+    <div class="contenedor esencia__inner">
+      <div>
+        <span class="eyebrow" data-reveal>Nuestra esencia</span>
+        <h2 class="titulo-seccion" data-reveal>14 años impulsando <em>tu bienestar</em></h2>
+        <p class="parrafo esencia__parrafo" data-reveal>Somos un Estudio de Pilates con 14 años de experiencia dedicado a brindar un espacio de bienestar integral a través del método pilates, ofreciendo atención personalizada, profesional, segura y de calidad.</p>
+        <p class="parrafo esencia__parrafo" data-reveal>Cada cuerpo llega con su propia historia. Nuestro trabajo es escucharla, acompañarla y devolverle movimiento con conciencia, sin apuro y sin comparaciones.</p>
+        <div class="esencia__cifras" data-reveal>
+          <div class="dato"><span class="dato__valor">14</span><span class="dato__label">Años</span></div>
+          <div class="dato"><span class="dato__valor">7</span><span class="dato__label">Instructoras</span></div>
+          <div class="dato"><span class="dato__valor">2</span><span class="dato__label">Salas</span></div>
+        </div>
+      </div>
+
+      <div class="esencia__media" data-reveal>
+        <div class="esencia__marco">
+          <img src="assets/img/esencia.jpg" alt="Detalle de una clase en el reformer" data-parallax="esencia">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C. DIFERENCIADORES -->
+  <section class="seccion porque" id="porque">
+    <div class="contenedor">
+      <h2 class="titulo-seccion" data-reveal>Cada cuerpo tiene <em>su propio ritmo</em></h2>
+
+      <div class="porque__grid">
+        <article class="porque__destacado" data-reveal>
+          <img src="assets/img/movimiento.png" alt="Alumna estirando en una clase de Equilibrate" loading="lazy">
+          <div class="porque__destacado-texto">
+            <span class="porque__num">01</span>
+            <h3>Clases para todos</h3>
+            <p>Mujeres de todas las edades, hombres, embarazadas y deportistas. Cada grupo con su propia progresión.</p>
+          </div>
+        </article>
+
+        <div class="porque__lista">
+          <article class="porque__item" data-reveal>
+            <span class="porque__num">02</span>
+            <div>
+              <h3>Atención de excelencia</h3>
+              <p>7 instructoras capacitadas para leer tus necesidades y adaptar cada ejercicio a tu cuerpo y tu momento.</p>
+            </div>
+          </article>
+          <article class="porque__item" data-reveal>
+            <span class="porque__num">03</span>
+            <div>
+              <h3>Instalaciones</h3>
+              <p>2 amplias salas equipadas con reformers, cadillac, accesorios y luz natural pensadas para tu bienestar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. GALERÍA -->
+  <section class="seccion galeria" id="galeria">
+    <div class="contenedor">
+      <div class="galeria__head">
+        <h2 class="titulo-seccion" data-reveal>Nuestros espacios, <em>nuestra gente</em></h2>
+      </div>
+
+      <div class="galeria__grid">
+        <figure class="foto foto--g" data-reveal>
+          <img src="assets/img/reformer-luz.png" alt="Ejercicio de pilates en el reformer" loading="lazy">
+        </figure>
+        <figure class="foto foto--v" data-reveal>
+          <img src="assets/img/mat-textura.png" alt="Mats de pilates listos para la clase" loading="lazy">
+        </figure>
+        <figure class="foto foto--w" data-reveal>
+          <img src="assets/img/movimiento.png" alt="Alumna en movimiento durante una clase" loading="lazy">
+        </figure>
+        <figure class="foto foto--s1" data-reveal>
+          <img src="assets/img/hero.jpg" alt="Sala principal de reformers">
+        </figure>
+        <figure class="foto foto--s2" data-reveal>
+          <img src="assets/img/esencia.jpg" alt="Trabajo con pelota en el reformer">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- E. MEMBRESÍA Y COMUNIDAD -->
+  <section class="comunidad" id="comunidad">
+    <div class="contenedor">
+      <div class="comunidad__inner">
+        <div>
+          <span class="eyebrow" data-reveal>Membresía</span>
+          <h2 class="titulo-seccion" data-reveal>Más que solo pilates: <em>tu comunidad</em></h2>
+          <p class="comunidad__texto" data-reveal>En Equilibrate trabajamos activamente para la construcción de una comunidad comprometida con los hábitos saludables. Nuestra membresía exclusiva te da acceso a beneficios mensuales en más de 20 marcas líderes en bienestar, deporte y salud.</p>
+          <div class="comunidad__acciones" data-reveal>
+            <a class="btn btn--primario" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Quiero la membresía</a>
+            <span class="comunidad__badge"><span class="punto"></span>Pilates mode: ON</span>
+          </div>
+        </div>
+
+        <div class="beneficios" data-reveal>
+          <div class="beneficio"><span class="beneficio__valor">+20</span><span class="beneficio__label">Marcas aliadas en bienestar, deporte y salud</span></div>
+          <div class="beneficio"><span class="beneficio__valor">12</span><span class="beneficio__label">Beneficios nuevos cada mes para socias</span></div>
+          <div class="beneficio"><span class="beneficio__valor">2</span><span class="beneficio__label">Encuentros de comunidad por trimestre</span></div>
+          <div class="beneficio"><span class="beneficio__valor">1:7</span><span class="beneficio__label">Máximo de alumnas por instructora</span></div>
+        </div>
+      </div>
+
+      <div class="marcas">
+        <span class="marcas__titulo">Marcas aliadas</span>
+        <div class="marquee">
+          <div class="marquee__track" data-marquee>
+            <div class="marquee__item"><img src="assets/img/marcas/fisika.jpg" alt="Fisika · Centro del movimiento y la postura" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/alondra.png" alt="Alondra Medicina Estética" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/nutravida.jpg" alt="Nutra+Vida" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/pro-club.jpg" alt="Pro Club Padel" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/katerinne-store.png" alt="Katerinne Store" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/via-lactea.jpg" alt="Vía Láctea Centro Estético" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/kinelift.jpg" alt="Kinelift" loading="lazy"></div>
+            <div class="marquee__item"><img src="assets/img/marcas/monaco.jpg" alt="Mónaco Joyería y Relojería" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- F. DATOS PRÁCTICOS Y UBICACIÓN -->
+  <section class="seccion visitanos" id="visitanos">
+    <div class="contenedor">
+      <div class="visitanos__head">
+        <h2 class="titulo-seccion" data-reveal>Empezá <em>hoy</em> tu camino</h2>
+      </div>
+
+      <div class="visitanos__inner">
+        <div class="visitanos__datos" data-reveal>
+          <div class="ficha ficha--foto">
+            <img class="ficha__foto" src="assets/img/mat-textura.png" alt="Mat de pilates listo para empezar la clase" loading="lazy">
+            <div class="ficha__contenido">
+              <span class="ficha__label ficha__label--claro">Horarios</span>
+              <div class="ficha__titulo-foto">Nuestra <em>disponibilidad</em></div>
+              <div class="ficha__horario"><span class="punto"></span><span>Lunes a viernes · 7:00 a 21:00 h</span></div>
+              <div class="ficha__horario ficha__horario--tenue"><span class="punto punto--tenue"></span><span>Sábados: consultar disponibilidad</span></div>
+            </div>
+          </div>
+          <div class="ficha">
+            <span class="ficha__label">Ubicación</span>
+            <p class="ficha__dato">Mitre 502<br>Edificio Don Jorge</p>
+            <a class="enlace-subrayado" href="#contacto">Consultar horarios disponibles</a>
+          </div>
+        </div>
+
+        <a class="mapa" data-reveal href="https://maps.app.goo.gl/49hoSt6GWdT3udZRA" target="_blank" rel="noopener noreferrer" aria-label="Abrir la ubicación de Equilibrate en Google Maps">
+          <div class="mapa__grid"></div>
+          <div class="mapa__avenida"></div>
+          <div class="mapa__linea"></div>
+          <div class="mapa__calle"></div>
+          <div class="mapa__manzana mapa__manzana--1"></div>
+          <div class="mapa__manzana mapa__manzana--2"></div>
+          <div class="mapa__pin">
+            <div class="mapa__globo"><span class="punto"></span><span>Equilibrate · Mitre 502</span></div>
+            <span class="mapa__tallo"></span>
+            <span class="mapa__punto"></span>
+          </div>
+          <span class="mapa__nota">Ver ubicación en Google Maps ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- G. CONTACTO -->
+  <section class="seccion contacto" id="contacto">
+    <div class="contenedor">
+      <div class="contacto__head">
+        <h2 class="titulo-seccion" data-reveal>¿Dudas? <em>Te acompañamos</em></h2>
+        <p class="contacto__intro" data-reveal>Contanos un poco de vos y te escribimos con los horarios que mejor te queden.</p>
+      </div>
+
+      <form class="form" data-form novalidate>
+        <label class="campo">
+          <span class="campo__label">Nombre y apellido</span>
+          <input name="nombre" type="text" placeholder="Tu nombre" required>
+        </label>
+        <label class="campo">
+          <span class="campo__label">WhatsApp</span>
+          <input name="tel" type="tel" placeholder="+54 9 ..." required>
+        </label>
+        <label class="campo">
+          <span class="campo__label">Email</span>
+          <input name="email" type="email" placeholder="hola@correo.com">
+        </label>
+        <label class="campo">
+          <span class="campo__label">Horario que preferís</span>
+          <select name="horario">
+            <option>Mañana (7 a 12 h)</option>
+            <option>Mediodía (12 a 15 h)</option>
+            <option>Tarde (15 a 18 h)</option>
+            <option>Noche (18 a 21 h)</option>
+            <option>Flexible</option>
+          </select>
+        </label>
+
+        <div class="campo campo--full">
+          <span class="campo__label">¿Hiciste pilates antes?</span>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="nivel" value="Nunca hice">Nunca hice</label>
+            <label class="opcion"><input type="radio" name="nivel" value="Algo de experiencia">Algo de experiencia</label>
+            <label class="opcion"><input type="radio" name="nivel" value="Practico hace años">Practico hace años</label>
+          </div>
+        </div>
+
+        <label class="campo campo--full">
+          <span class="campo__label">Tu objetivo o lo que quieras contarnos</span>
+          <textarea name="mensaje" rows="3" placeholder="Dolor de espalda, embarazo, volver a moverme, preparación deportiva…"></textarea>
+        </label>
+
+        <div class="form__pie">
+          <span class="form__aviso">Respondemos en menos de 24 h hábiles.</span>
+          <button class="btn btn--oscuro" type="submit">Enviar consulta</button>
+        </div>
+        <p class="form__error" data-form-error hidden>No pudimos enviar tu consulta. Probá de nuevo en un momento o escribinos por WhatsApp.</p>
+      </form>
+
+      <div class="gracias" data-gracias hidden>
+        <span class="gracias__titulo">Gracias, <span data-gracias-nombre></span></span>
+        <p>Recibimos tu mensaje. Te escribimos dentro de las próximas 24 horas hábiles.</p>
+        <a class="enlace-subrayado" href="https://wa.me/5492665322868" target="_blank" rel="noopener">O escribinos ahora por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- H. FOOTER -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer__inner">
+        <div>
+          <div class="logo">
+            <svg class="logo__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-icon"></use></svg>
+            <span class="logo__texto">
+              <span class="logo__nombre">Equilibrate</span>
+              <span class="logo__bajada">Studio Pilates</span>
+            </span>
+          </div>
+          <p class="footer__texto">Bienestar integral a través del método pilates. Mitre 502, Edificio Don Jorge.</p>
+        </div>
+        <div class="footer__col">
+          <span class="footer__titulo">Navegación</span>
+          <a href="#esencia">Nuestra esencia</a>
+          <a href="#porque">¿Por qué Equilibrate?</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__titulo">Seguinos</span>
+          <a href="https://www.instagram.com/equilibrate_studio_pilates/" target="_blank" rel="noopener">@equilibrate_studio_pilates</a>
+          <a href="https://wa.me/5492665322868" target="_blank" rel="noopener">WhatsApp</a>
+          <span>Lun a vie · 7 a 21 h</span>
+        </div>
+      </div>
+      <p class="footer__lema">Más movimiento. Más Equilibrate.</p>
+      <div class="footer__legal">
+        <span>© 2026 Equilibrate Studio Pilates</span>
+        <span>Mitre 502, Edificio Don Jorge</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

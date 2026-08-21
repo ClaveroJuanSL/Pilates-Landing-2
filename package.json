@@ -1,0 +1,10 @@
+{
+  "name": "equilibrate-estudio-de-pilates",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page de Equilibrate Studio Pilates con Vercel Serverless Functions.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {}
+}
