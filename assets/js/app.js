@@ -97,12 +97,12 @@
   /* ------------------------------------------------- Historia (hero) ---- */
 
   function initHistoria() {
+    var DURACION = 4500;
     var marco = document.querySelector('[data-historia]');
     var riel = marco && marco.querySelector('[data-historia-riel]');
     if (!marco || !riel) return;
 
     var reales = Array.prototype.slice.call(riel.querySelectorAll('.hero__historia-slide'));
-    var segmentos = Array.prototype.slice.call(marco.querySelectorAll('.hero__historia-seg'));
     var btnAnterior = marco.querySelector('[data-historia-prev]');
     var btnSiguiente = marco.querySelector('[data-historia-next]');
     var total = reales.length;
@@ -118,13 +118,10 @@
     riel.insertBefore(clonUltimo, reales[0]);
     riel.appendChild(clonPrimero);
 
+    var TRANSICION = 620; // un poco más que la transición CSS del riel (.6s)
     var posicion = 1; // 0 = clon último, 1..total = reales, total+1 = clon primero
-
-    function indiceVisual() {
-      if (posicion === 0) return total - 1;
-      if (posicion === total + 1) return 0;
-      return posicion - 1;
-    }
+    var temporizador = null;
+    var bloqueado = false;
 
     function mover(animar) {
       riel.style.transition = animar ? '' : 'none';
@@ -132,58 +129,43 @@
       if (!animar) void riel.offsetWidth;
     }
 
-    function actualizarSegmentos() {
-      var actual = indiceVisual();
-      segmentos.forEach(function (seg, i) {
-        seg.classList.toggle('is-completa', i < actual);
-        seg.classList.remove('is-activa');
-      });
+    function ir(delta) {
+      if (bloqueado) return;
+      posicion += delta;
+      mover(true);
 
-      if (!reduce) {
-        var segActivo = segmentos[actual];
-        var relleno = segActivo.querySelector('.hero__historia-fill');
-        // Reinicia la animación del relleno aunque se repita el mismo índice.
-        relleno.style.animation = 'none';
-        void relleno.offsetWidth;
-        relleno.style.animation = '';
-        segActivo.classList.add('is-activa');
-      } else {
-        segmentos[actual].classList.add('is-completa');
+      // Al llegar a un clon, tras la transición saltamos sin animar
+      // a la imagen real equivalente: el efecto de loop infinito.
+      if (posicion === 0 || posicion === total + 1) {
+        bloqueado = true;
+        setTimeout(function () {
+          posicion = (posicion === 0) ? total : 1;
+          mover(false);
+          bloqueado = false;
+        }, TRANSICION);
       }
     }
 
-    function siguiente() {
-      posicion += 1;
-      mover(true);
-      actualizarSegmentos();
+    function programarSiguiente() {
+      if (reduce) return;
+      clearTimeout(temporizador);
+      temporizador = setTimeout(siguiente, DURACION);
     }
-    function anterior() {
-      posicion -= 1;
-      mover(true);
-      actualizarSegmentos();
-    }
+
+    function siguiente() { ir(1); programarSiguiente(); }
+    function anterior() { ir(-1); programarSiguiente(); }
 
     if (btnAnterior) btnAnterior.addEventListener('click', anterior);
     if (btnSiguiente) btnSiguiente.addEventListener('click', siguiente);
 
-    // Al terminar el deslizamiento hacia un clon, saltamos sin transición
-    // a la imagen real equivalente: el efecto de loop infinito.
-    riel.addEventListener('transitionend', function (e) {
-      if (e.propertyName !== 'transform') return;
-      if (posicion === 0) { posicion = total; mover(false); }
-      else if (posicion === total + 1) { posicion = 1; mover(false); }
-    });
-
     mover(false);
-    actualizarSegmentos();
 
     if (reduce) return;
 
-    marco.addEventListener('animationend', function (e) {
-      if (e.target.classList.contains('hero__historia-fill')) siguiente();
-    });
-    marco.addEventListener('mouseenter', function () { marco.classList.add('is-pausada'); });
-    marco.addEventListener('mouseleave', function () { marco.classList.remove('is-pausada'); });
+    marco.addEventListener('mouseenter', function () { clearTimeout(temporizador); });
+    marco.addEventListener('mouseleave', programarSiguiente);
+
+    programarSiguiente();
   }
 
   /* ------------------------------------------------------------ Marquee --- */
