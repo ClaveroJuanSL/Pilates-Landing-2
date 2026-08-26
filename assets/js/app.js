@@ -2,8 +2,6 @@
    Equilibrate — app.js
    SOLO lógica de UI: animaciones de scroll, parallax, nav, carrusel y
    estados visuales del formulario.
-   La lógica de negocio (envío, persistencia, validación profunda, APIs)
-   está delegada a Claude Code — ver los TODO al final del archivo.
    ========================================================================== */
 
 (function () {
@@ -37,7 +35,7 @@
     };
   }
 
-  /* ------------------------------------------------------------ Reveals --- */
+  /*- Reveals --- */
 
   function initReveal() {
     var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
@@ -64,7 +62,7 @@
     };
   }
 
-  /* ----------------------------------------------------------- Parallax --- */
+  /* -- Parallax --- */
 
   function initParallax() {
     if (reduce) return null;
@@ -75,7 +73,7 @@
     if (!hero && !esencia) return null;
 
     return function onScrollParallax(vh) {
-      // Hero: se desplaza, se achica y se desvanece a medida que lo pasamos.
+      // Hero
       if (hero) {
         var sec = hero.closest('section') || hero;
         var top = sec.getBoundingClientRect().top;
@@ -86,7 +84,7 @@
         hero.style.opacity = Math.max(0, 1 - eased * 1.25).toFixed(3);
       }
 
-      // Esencia: micro-parallax de la foto dentro de su marco.
+      // Esencia: micro-parallax
       if (esencia) {
         var r = esencia.getBoundingClientRect();
         var p = (r.top + r.height / 2 - vh / 2) / vh;
@@ -119,8 +117,8 @@
     riel.insertBefore(clonUltimo, reales[0]);
     riel.appendChild(clonPrimero);
 
-    var TRANSICION = 620; // un poco más que la transición CSS del riel (.6s)
-    var posicion = 1; // 0 = clon último, 1..total = reales, total+1 = clon primero
+    var TRANSICION = 620; 
+    var posicion = 1;
     var temporizador = null;
     var bloqueado = false;
 
@@ -174,7 +172,7 @@
   function initMarquee() {
     var track = document.querySelector('[data-marquee]');
     if (!track) return;
-    // Duplicamos los items para que el loop del CSS (-50%) sea continuo.
+   
     track.innerHTML += track.innerHTML;
   }
 
@@ -266,7 +264,7 @@
    * @returns {Promise<Array>}
    */
   function obtenerDisponibilidad() {
-    // TODO [CLAUDE CODE]: Conectar endpoint del backend aquí.
+    //Conectar endpoint del backend aquí.
     return Promise.resolve([]);
   }
 
@@ -275,7 +273,7 @@
    * @returns {Promise<Array>}
    */
   function obtenerMarcasAliadas() {
-    // TODO [CLAUDE CODE]: Conectar endpoint del backend aquí.
+    //Conectar endpoint del backend aquí.
     return Promise.resolve([]);
   }
 
