@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Equilibrate Studio Pilates, Mitre 502</title>
-  <meta name="description" content="Estudio de Pilates con 14 años de experiencia. Bienestar integral, atención personalizada y clases para todos. Mitre 502, Edificio Don Jorge.">
+  <title>Equilibrate Studio Pilates — Mitre 502</title>
+  <meta name="description" content="Estudio de Pilates con 13 años de trayectoria. Clases para todas las edades, embarazadas, hombres y deportistas. Membresía, certificación y comunidad. Mitre 502, Edificio Don Jorge.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,103 +16,157 @@
 <body>
 
   <header class="header" data-header>
-    <a class="logo" href="#inicio">
-      <img class="logo__icon" src="assets/img/logo-icon.png" alt="" aria-hidden="true">
-      <span class="logo__texto">
-        <span class="logo__nombre">Equilibrate</span>
-        <span class="logo__bajada">Studio Pilates</span>
-      </span>
-    </a>
-    <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav">Menú</button>
-    <nav class="nav" id="nav" data-nav>
-      <a class="nav__link" href="#esencia">Esencia</a>
-      <a class="nav__link" href="#porque">Por qué</a>
-      <a class="nav__link" href="#galeria">Espacios</a>
-      <a class="nav__link" href="#comunidad">Comunidad</a>
-      <a class="nav__link" href="#visitanos">Visitanos</a>
-      <a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reservar</a>
+    <div class="contenedor header__inner">
+      <nav class="nav nav--izq" id="nav-izq" data-nav>
+        <a class="nav__link" href="#clases">Clases</a>
+        <a class="nav__link" href="#membresia">Membresía</a>
+        <a class="nav__link" href="#certificacion">Certificación</a>
+      </nav>
+
+      <a class="logo-marca" href="#inicio" aria-label="Equilibrate Studio Pilates — inicio">
+        <img class="logo-marca__icono" src="assets/img/logo-icon.png" alt="">
+      </a>
+
+      <nav class="nav nav--der" id="nav-der" data-nav>
+        <a class="nav__link" href="#quienes-somos">Quiénes somos</a>
+        <a class="nav__link" href="#ustedes">Ustedes</a>
+        <a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reserva</a>
+      </nav>
+
+      <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-movil">Menú</button>
+    </div>
+
+    <nav class="nav-movil" id="nav-movil" data-nav-movil>
+      <a class="nav__link" href="#clases">Clases</a>
+      <a class="nav__link" href="#membresia">Membresía</a>
+      <a class="nav__link" href="#certificacion">Certificación</a>
+      <a class="nav__link" href="#quienes-somos">Quiénes somos</a>
+      <a class="nav__link" href="#ustedes">Ustedes</a>
+      <a class="btn btn--primario" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reserva tu clase</a>
     </nav>
   </header>
 
   <!-- A. HERO -->
   <section class="hero" id="inicio">
-    <div class="hero__halo hero__halo--1"></div>
-    <div class="hero__halo hero__halo--2"></div>
+    <div class="hero__track" data-historia>
+      <div class="hero__riel" data-historia-riel>
+        <img class="hero__slide" src="assets/img/hero-1.jpg" alt="Instructora elongando en el reformer en Equilibrate">
+        <img class="hero__slide" src="assets/img/hero-2.jpg" alt="Estocada de elongación junto al reformer">
+        <img class="hero__slide" src="assets/img/hero-3.jpg" alt="Ejercicio de control con pelota en el reformer">
+      </div>
+      <div class="hero__velo"></div>
+      <button class="hero__nav hero__nav--prev" type="button" data-historia-prev aria-label="Imagen anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="hero__nav hero__nav--next" type="button" data-historia-next aria-label="Imagen siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
 
     <div class="contenedor hero__inner">
-      <div>
-        <div class="hero__kicker" data-reveal>
-          <span></span>
-          <span>Desde 2012 · Mitre 502</span>
-        </div>
-        <h1 class="hero__titulo" data-reveal>Tu momento de <em>moverte</em>.</h1>
-        <p class="hero__subtitulo" data-reveal>La constancia también se entrena: pilates para cada cuerpo, en su propio ritmo, en Mitre 502.</p>
-        <div class="hero__acciones" data-reveal>
-<a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868?text=Buenas!%20Quiero%20reservar%20mi%20primera%20clase" target="_blank" rel="noopener">Reservar mi primera clase</a>          <a class="btn btn--fantasma" href="#esencia">Conocer el estudio</a>
-        </div>
-        <div class="hero__datos" data-reveal>
-          <div class="dato"><span class="dato__valor">14</span><span class="dato__label">Años</span></div>
-          <span class="divisor"></span>
-          <div class="dato"><span class="dato__valor">7</span><span class="dato__label">Instructoras</span></div>
-          <span class="divisor"></span>
-          <div class="dato"><span class="dato__valor">2</span><span class="dato__label">Salas</span></div>
-        </div>
+      <div class="hero__kicker" data-reveal>
+        <span></span>
+        <span>Desde 2012</span>
       </div>
-
-      <div class="hero__media" data-parallax="hero">
-        <div class="hero__marco" data-historia>
-          <div class="hero__historia-track">
-            <div class="hero__historia-riel" data-historia-riel>
-              <img class="hero__historia-slide" src="assets/img/hero.jpg" alt="Clase de pilates en Equilibrate">
-              <img class="hero__historia-slide" src="assets/img/movimiento.png" alt="Alumna en movimiento durante una clase">
-              <img class="hero__historia-slide" src="assets/img/reformer-luz.png" alt="Ejercicio de pilates en el reformer">
-            </div>
-          </div>
-          <button class="hero__historia-nav hero__historia-nav--prev" type="button" data-historia-prev aria-label="Imagen anterior">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="hero__historia-nav hero__historia-nav--next" type="button" data-historia-next aria-label="Imagen siguiente">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-        <div class="hero__pill"><span class="punto"></span><span>Grupos reducidos</span></div>
+      <h1 class="hero__titulo" data-reveal>
+        <img class="hero__titulo-logo" src="assets/img/logo-wordmark.png" alt="Equilibrate, Studio Pilates">
+      </h1>
+      <p class="hero__subtitulo" data-reveal>La constancia también se entrena: pilates para cada cuerpo, en su propio ritmo, en Mitre 502.</p>
+      <div class="hero__acciones" data-reveal>
+        <a class="btn btn--primario" href="https://wa.me/5492665322868" target="_blank" rel="noopener">Reservar mi primera clase</a>
+        <a class="btn btn--fantasma" href="#clases">Conocer las clases</a>
       </div>
+      <div class="hero__pill" data-reveal><span class="punto"></span><span>Grupos reducidos</span></div>
     </div>
 
     <div class="hero__scroll"><span>Scroll</span><span></span></div>
   </section>
 
-  <!-- B. NUESTRA ESENCIA -->
-  <section class="seccion esencia" id="esencia">
-    <div class="contenedor esencia__inner">
-      <div>
-        <span class="eyebrow" data-reveal>Nuestra esencia</span>
-        <h2 class="titulo-seccion" data-reveal>14 años impulsando <em>tu bienestar</em></h2>
-        <p class="parrafo esencia__parrafo" data-reveal>Somos un Estudio de Pilates con 14 años de experiencia dedicado a brindar un espacio de bienestar integral a través del método pilates, ofreciendo atención personalizada, profesional, segura y de calidad.</p>
-        <p class="parrafo esencia__parrafo" data-reveal>Cada cuerpo llega con su propia historia. Nuestro trabajo es escucharla, acompañarla y devolverle movimiento con conciencia, sin apuro y sin comparaciones.</p>
-        <div class="esencia__cifras" data-reveal>
-          <div class="dato"><span class="dato__valor">14</span><span class="dato__label">Años</span></div>
-          <div class="dato"><span class="dato__valor">7</span><span class="dato__label">Instructoras</span></div>
-          <div class="dato"><span class="dato__valor">2</span><span class="dato__label">Salas</span></div>
+  <!-- B. FRANJA DE CIFRAS -->
+  <section class="franja">
+    <div class="contenedor franja__inner">
+      <span class="franja__dato">13 años de experiencia</span>
+      <span class="franja__separador" aria-hidden="true"></span>
+      <span class="franja__dato">2 salas</span>
+      <span class="franja__separador" aria-hidden="true"></span>
+      <span class="franja__dato">Instructoras certificadas</span>
+    </div>
+  </section>
+
+  <!-- C. CLASES -->
+  <section class="seccion clases" id="clases">
+    <div class="contenedor clases__inner">
+      <div class="clases__media" data-historia>
+        <div class="clases__track">
+          <div class="clases__riel" data-historia-riel>
+            <img class="clases__slide" src="assets/img/clases-general.jpg" alt="Clase grupal de pilates en reformer con bandas elásticas">
+            <img class="clases__slide" src="assets/img/clases-hombres.jpg" alt="Alumno haciendo pilates en el reformer">
+            <img class="clases__slide" src="assets/img/clases-embarazo.jpg" alt="Clase grupal de pilates en Equilibrate">
+          </div>
         </div>
+        <button class="hero__nav hero__nav--prev" type="button" data-historia-prev aria-label="Imagen anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hero__nav hero__nav--next" type="button" data-historia-next aria-label="Imagen siguiente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
 
-      <div class="esencia__media" data-reveal>
-        <div class="esencia__marco">
-          <img src="assets/img/esencia.jpg" alt="Detalle de una clase en el reformer" data-parallax="esencia">
+      <div>
+        <span class="eyebrow" data-reveal>Nuestras clases</span>
+        <h2 class="titulo-seccion" data-reveal>Un cuerpo, <em>mil motivos</em></h2>
+        <p class="parrafo" data-reveal>Clases para mujeres de todas las edades, embarazadas, hombres y deportistas. Cada grupo con su propia progresión, su propio ritmo y una instructora que lo acompaña de cerca.</p>
+
+        <div class="clases__lista" data-reveal>
+          <div class="clases__item">
+            <span class="clases__num">01</span>
+            <div>
+              <h3>Pilates reformer</h3>
+              <p>Clásico y contemporáneo, en grupos reducidos de hasta 7 alumnas por instructora.</p>
+            </div>
+          </div>
+          <div class="clases__item">
+            <span class="clases__num">02</span>
+            <div>
+              <h3>Embarazo y postparto</h3>
+              <p>Adaptado a cada trimestre, con foco en piso pélvico, postura y recuperación.</p>
+            </div>
+          </div>
+          <div class="clases__item">
+            <span class="clases__num">03</span>
+            <div>
+              <h3>Deportistas y HIIT</h3>
+              <p>Fuerza, movilidad y prevención de lesiones para quienes entrenan otra disciplina.</p>
+            </div>
+          </div>
         </div>
+
+        <a class="btn btn--primario" href="https://wa.me/5492665322868" target="_blank" rel="noopener" data-reveal>Reservar mi primera clase</a>
       </div>
     </div>
   </section>
 
-  <!-- C. DIFERENCIADORES -->
-  <section class="seccion porque" id="porque">
-    <div class="contenedor">
-      <h2 class="titulo-seccion" data-reveal>Cada cuerpo tiene <em>su propio ritmo</em></h2>
+  <!-- D. QUIÉNES SOMOS -->
+  <section class="seccion quienes" id="quienes-somos">
+    <div class="contenedor quienes__inner">
+      <div>
+        <span class="eyebrow" data-reveal>Quiénes somos</span>
+        <h2 class="titulo-seccion" data-reveal>13 años impulsando <em>tu bienestar</em></h2>
+        <p class="parrafo quienes__parrafo" data-reveal>Somos un Estudio de Pilates con 13 años de trayectoria, dedicado a brindar un espacio de bienestar integral a través del método pilates, con atención personalizada, profesional, segura y de calidad.</p>
+        <p class="parrafo quienes__parrafo" data-reveal>Cada cuerpo llega con su propia historia. Nuestro trabajo es escucharla, acompañarla y devolverle movimiento con conciencia, sin apuro y sin comparaciones.</p>
+      </div>
 
+      <div class="quienes__media" data-reveal>
+        <div class="quienes__marco">
+          <img src="assets/img/quienes-somos.jpg" alt="Instructora dirigiendo una clase en Equilibrate" data-parallax="quienes">
+        </div>
+      </div>
+    </div>
+
+    <div class="contenedor">
       <div class="porque__grid">
         <article class="porque__destacado" data-reveal>
-          <img src="assets/img/movimiento.png" alt="Alumna estirando en una clase de Equilibrate" loading="lazy">
+          <img src="assets/img/quienes-destacado.jpg" alt="Alumna sonriendo durante una clase con bandas elásticas" loading="lazy">
           <div class="porque__destacado-texto">
             <span class="porque__num">01</span>
             <h3>Clases para todos</h3>
@@ -125,7 +179,7 @@
             <span class="porque__num">02</span>
             <div>
               <h3>Atención de excelencia</h3>
-              <p>7 instructoras capacitadas para leer tus necesidades y adaptar cada ejercicio a tu cuerpo y tu momento.</p>
+              <p>Instructoras certificadas, capacitadas para leer tus necesidades y adaptar cada ejercicio a tu cuerpo y tu momento.</p>
             </div>
           </article>
           <article class="porque__item" data-reveal>
@@ -140,74 +194,120 @@
     </div>
   </section>
 
-  <!-- D. GALERÍA -->
-  <section class="seccion galeria" id="galeria">
+  <!-- E. ESPACIOS (galería) -->
+  <section class="seccion espacios" id="espacios">
     <div class="contenedor">
-      <div class="galeria__head">
+      <div class="espacios__head">
         <h2 class="titulo-seccion" data-reveal>Nuestros espacios, <em>nuestra gente</em></h2>
       </div>
 
-      <div class="galeria__grid">
+      <div class="espacios__grid">
         <figure class="foto foto--g" data-reveal>
-          <img src="assets/img/reformer-luz.png" alt="Ejercicio de pilates en el reformer" loading="lazy">
+          <img src="assets/img/espacios-3.jpg" alt="Instructora enseñando en una de nuestras salas" loading="lazy">
         </figure>
         <figure class="foto foto--v" data-reveal>
-          <img src="assets/img/mat-textura.png" alt="Mats de pilates listos para la clase" loading="lazy">
+          <img src="assets/img/espacios-1.jpg" alt="Detalle del aro y la pelota de pilates" loading="lazy">
         </figure>
         <figure class="foto foto--w" data-reveal>
-          <img src="assets/img/movimiento.png" alt="Alumna en movimiento durante una clase" loading="lazy">
+          <img src="assets/img/espacios-2.jpg" alt="Alumna elongando junto al reformer" loading="lazy">
         </figure>
         <figure class="foto foto--s1" data-reveal>
-          <img src="assets/img/hero.jpg" alt="Sala principal de reformers">
+          <img src="assets/img/espacios-4.jpg" alt="Alumna mayor en clase de pilates">
         </figure>
         <figure class="foto foto--s2" data-reveal>
-          <img src="assets/img/esencia.jpg" alt="Trabajo con pelota en el reformer">
+          <img src="assets/img/espacios-5.jpg" alt="Alumno haciendo pilates en el reformer">
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- E. MEMBRESÍA Y COMUNIDAD -->
-  <section class="comunidad" id="comunidad">
-    <div class="contenedor">
-      <div class="comunidad__inner">
-        <div>
-          <span class="eyebrow" data-reveal>Membresía</span>
-          <h2 class="titulo-seccion" data-reveal>Más que solo pilates: <em>tu comunidad</em></h2>
-          <p class="comunidad__texto" data-reveal>En Equilibrate trabajamos activamente para la construcción de una comunidad comprometida con los hábitos saludables. Nuestra membresía exclusiva te da acceso a beneficios mensuales en más de 20 marcas líderes en bienestar, deporte y salud.</p>
-          <div class="comunidad__acciones" data-reveal>
-            <a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868?text=Buenas!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20membres%C3%ADa" target="_blank" rel="noopener">Quiero la membresía</a>
-            <span class="comunidad__badge"><span class="punto"></span>Pilates mode: ON</span>
-          </div>
-        </div>
-
-        <div class="beneficios" data-reveal>
-          <div class="beneficio"><span class="beneficio__valor">+20</span><span class="beneficio__label">Marcas aliadas en bienestar, deporte y salud</span></div>
-          <div class="beneficio"><span class="beneficio__valor">12</span><span class="beneficio__label">Beneficios nuevos cada mes para socias</span></div>
-          <div class="beneficio"><span class="beneficio__valor">2</span><span class="beneficio__label">Encuentros de comunidad por trimestre</span></div>
-          <div class="beneficio"><span class="beneficio__valor">1:7</span><span class="beneficio__label">Máximo de alumnas por instructora</span></div>
+  <!-- F. CERTIFICACIÓN -->
+  <section class="certificacion" id="certificacion">
+    <div class="contenedor certificacion__inner">
+      <div>
+        <span class="eyebrow certificacion__eyebrow" data-reveal>Formación profesional</span>
+        <h2 class="titulo-seccion certificacion__titulo" data-reveal>Formate como <em>instructora certificada</em></h2>
+        <p class="certificacion__texto" data-reveal>13 años de experiencia dando clase nos permiten formar a la próxima generación de instructoras. Un programa teórico-práctico, con clases en vivo sobre alumnas reales y acompañamiento hasta tu primera clase dictada.</p>
+        <div class="certificacion__acciones" data-reveal>
+          <a class="btn btn--primario" href="https://wa.me/5492665322868?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20certificaci%C3%B3n%20de%20instructoras" target="_blank" rel="noopener">Quiero información de la certificación</a>
         </div>
       </div>
 
-      <div class="marcas">
-        <span class="marcas__titulo">Marcas aliadas</span>
-        <div class="marquee">
-          <div class="marquee__track" data-marquee>
-            <div class="marquee__item"><img src="assets/img/marcas/fisika.jpg" alt="Fisika · Centro del movimiento y la postura" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/alondra.png" alt="Alondra Medicina Estética" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/nutravida.jpg" alt="Nutra+Vida" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/pro-club.jpg" alt="Pro Club Padel" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/katerinne-store.png" alt="Katerinne Store" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/via-lactea.jpg" alt="Vía Láctea Centro Estético" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/kinelift.jpg" alt="Kinelift" loading="lazy"></div>
-            <div class="marquee__item"><img src="assets/img/marcas/monaco.jpg" alt="Mónaco Joyería y Relojería" loading="lazy"></div>
+      <ul class="certificacion__lista" data-reveal>
+        <li><span class="certificacion__check">✓</span>Método reformer clásico y contemporáneo</li>
+        <li><span class="certificacion__check">✓</span>Prácticas supervisadas en nuestras salas</li>
+        <li><span class="certificacion__check">✓</span>Anatomía aplicada y biomecánica del movimiento</li>
+        <li><span class="certificacion__check">✓</span>Certificado avalado por Equilibrate al finalizar</li>
+        <li><span class="certificacion__check">✓</span>Grupos reducidos, cupos limitados por cohorte</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- G. MEMBRESÍA -->
+  <section class="membresia" id="membresia">
+    <div class="contenedor">
+      <div class="membresia__mosaico" data-reveal>
+        <figure class="membresia__caja membresia__caja--foto">
+          <img src="assets/img/membresia-mosaico-1.jpg" alt="Alumno haciendo pilates en el reformer" loading="lazy">
+        </figure>
+        <div class="membresia__caja membresia__caja--texto">
+          <h3>Comunidad que suma</h3>
+          <p>Más de 20 marcas aliadas en bienestar, deporte y salud, con 12 beneficios nuevos cada mes para las socias.</p>
+        </div>
+
+        <div class="membresia__marcas">
+          <span class="marcas__titulo">Marcas aliadas</span>
+          <div class="marquee">
+            <div class="marquee__track" data-marquee>
+              <div class="marquee__item"><img src="assets/img/marcas/fisika.jpg" alt="Fisika · Centro del movimiento y la postura" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/alondra.png" alt="Alondra Medicina Estética" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/nutravida.jpg" alt="Nutra+Vida" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/pro-club.jpg" alt="Pro Club Padel" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/katerinne-store.png" alt="Katerinne Store" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/via-lactea.jpg" alt="Vía Láctea Centro Estético" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/kinelift.jpg" alt="Kinelift" loading="lazy"></div>
+              <div class="marquee__item"><img src="assets/img/marcas/monaco.jpg" alt="Mónaco Joyería y Relojería" loading="lazy"></div>
+            </div>
           </div>
         </div>
+
+        <div class="membresia__caja membresia__caja--texto">
+          <h3>Grupos cuidados</h3>
+          <p>Encuentros de comunidad cada trimestre y un máximo de 1 instructora cada 7 alumnas, siempre.</p>
+        </div>
+        <figure class="membresia__caja membresia__caja--foto">
+          <img src="assets/img/membresia-mosaico-2.jpg" alt="Clase grupal de pilates en Equilibrate" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- F. DATOS PRÁCTICOS Y UBICACIÓN -->
+  <!-- H. USTEDES (testimonios) -->
+  <section class="seccion ustedes" id="ustedes">
+    <div class="contenedor">
+      <div class="ustedes__head">
+        <span class="eyebrow" data-reveal>Ustedes</span>
+        <h2 class="titulo-seccion" data-reveal>Lo que <em>nos cuentan</em></h2>
+      </div>
+
+      <div class="ustedes__grid">
+        <blockquote class="testimonio" data-reveal>
+          <p>“Empecé para cuidar la espalda y hoy es la hora de la semana que más me acomoda la cabeza. Las profes te conocen de verdad.”</p>
+          <footer>— Alumna, 3 años en Equilibrate</footer>
+        </blockquote>
+        <blockquote class="testimonio" data-reveal>
+          <p>“Vine embarazada y seguí después del parto. Nunca sentí que el grupo fuera para ‘otro tipo’ de cuerpo. Es para el mío, en cada etapa.”</p>
+          <footer>— Alumna, clases de embarazo y postparto</footer>
+        </blockquote>
+        <blockquote class="testimonio" data-reveal>
+          <p>“Entreno rugby y sumé pilates para la prevención de lesiones. Se nota en la cancha y en cómo duermo la noche después.”</p>
+          <footer>— Alumno, clases para deportistas</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- I. DATOS PRÁCTICOS Y UBICACIÓN -->
   <section class="seccion visitanos" id="visitanos">
     <div class="contenedor">
       <div class="visitanos__head">
@@ -217,7 +317,7 @@
       <div class="visitanos__inner">
         <div class="visitanos__datos" data-reveal>
           <div class="ficha ficha--foto">
-            <img class="ficha__foto" src="assets/img/mat-textura.png" alt="Mat de pilates listo para empezar la clase" loading="lazy">
+            <img class="ficha__foto" src="assets/img/visitanos-mat.jpg" alt="Aro y pelota de pilates listos para la clase" loading="lazy">
             <div class="ficha__contenido">
               <span class="ficha__label ficha__label--claro">Horarios</span>
               <div class="ficha__titulo-foto">Nuestra <em>disponibilidad</em></div>
@@ -250,7 +350,7 @@
     </div>
   </section>
 
-  <!-- G. CONTACTO -->
+  <!-- J. CONTACTO -->
   <section class="seccion contacto" id="contacto">
     <div class="contenedor">
       <div class="contacto__head">
@@ -258,60 +358,114 @@
         <p class="contacto__intro" data-reveal>Contanos un poco de vos y te escribimos con los horarios que mejor te queden.</p>
       </div>
 
-      <form class="form" data-form novalidate>
-        <label class="campo">
-          <span class="campo__label">Nombre y apellido</span>
-          <input name="nombre" type="text" placeholder="Tu nombre" required>
-        </label>
-        <label class="campo">
-          <span class="campo__label">WhatsApp</span>
-          <input name="tel" type="tel" placeholder="+54 9 ..." required>
-        </label>
-        <label class="campo">
-          <span class="campo__label">Email</span>
-          <input name="email" type="email" placeholder="hola@correo.com">
-        </label>
-        <label class="campo">
-          <span class="campo__label">Horario que preferís</span>
-          <select name="horario">
-            <option>Mañana (7 a 12 h)</option>
-            <option>Mediodía (12 a 15 h)</option>
-            <option>Tarde (15 a 18 h)</option>
-            <option>Noche (18 a 21 h)</option>
-            <option>Flexible</option>
-          </select>
-        </label>
+      <div class="form-wrapper" data-form-wrapper>
+        <div class="form-tabs" role="tablist" aria-label="Tipo de consulta">
+          <button class="form-tabs__btn is-active" type="button" id="tab-clases" data-form-tab="clases" role="tab" aria-selected="true">Quiero empezar clases</button>
+          <button class="form-tabs__btn" type="button" id="tab-certificacion" data-form-tab="certificacion" role="tab" aria-selected="false">Certificación de profesorado</button>
+        </div>
 
-        <div class="campo campo--full">
-          <span class="campo__label">¿Hiciste pilates antes?</span>
-          <div class="opciones">
-            <label class="opcion"><input type="radio" name="nivel" value="Nunca hice">Nunca hice</label>
-            <label class="opcion"><input type="radio" name="nivel" value="Algo de experiencia">Algo de experiencia</label>
-            <label class="opcion"><input type="radio" name="nivel" value="Practico hace años">Practico hace años</label>
+        <form class="form" data-form data-form-panel="clases" aria-labelledby="tab-clases" novalidate>
+          <label class="campo">
+            <span class="campo__label">Nombre y apellido</span>
+            <input name="nombre" type="text" placeholder="Tu nombre" required>
+          </label>
+          <label class="campo">
+            <span class="campo__label">WhatsApp</span>
+            <input name="tel" type="tel" placeholder="+54 9 ..." required>
+          </label>
+          <label class="campo">
+            <span class="campo__label">Email</span>
+            <input name="email" type="email" placeholder="hola@correo.com">
+          </label>
+          <label class="campo">
+            <span class="campo__label">Horario que preferís</span>
+            <select name="horario">
+              <option>Mañana (7 a 12 h)</option>
+              <option>Mediodía (12 a 15 h)</option>
+              <option>Tarde (15 a 18 h)</option>
+              <option>Noche (18 a 21 h)</option>
+              <option>Flexible</option>
+            </select>
+          </label>
+
+          <div class="campo campo--full">
+            <span class="campo__label">¿Hiciste pilates antes?</span>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="nivel" value="Nunca hice">Nunca hice</label>
+              <label class="opcion"><input type="radio" name="nivel" value="Algo de experiencia">Algo de experiencia</label>
+              <label class="opcion"><input type="radio" name="nivel" value="Practico hace años">Practico hace años</label>
+            </div>
           </div>
-        </div>
 
-        <label class="campo campo--full">
-          <span class="campo__label">Tu objetivo o lo que quieras contarnos</span>
-          <textarea name="mensaje" rows="3" placeholder="Dolor de espalda, embarazo, volver a moverme, preparación deportiva…"></textarea>
-        </label>
+          <label class="campo campo--full">
+            <span class="campo__label">Tu objetivo o lo que quieras contarnos</span>
+            <textarea name="mensaje" rows="3" placeholder="Dolor de espalda, embarazo, volver a moverme, preparación deportiva…"></textarea>
+          </label>
 
-        <div class="form__pie">
-          <span class="form__aviso">Respondemos en menos de 24 h hábiles.</span>
-          <button class="btn btn--oscuro" type="submit">Enviar consulta</button>
-        </div>
-        <p class="form__error" data-form-error hidden>No pudimos enviar tu consulta. Probá de nuevo en un momento o escribinos por WhatsApp.</p>
-      </form>
+          <input type="hidden" name="tipo" value="clases">
+
+          <div class="form__pie">
+            <span class="form__aviso">Respondemos en menos de 24 h hábiles.</span>
+            <button class="btn btn--oscuro" type="submit">Enviar consulta</button>
+          </div>
+          <p class="form__error" data-form-error hidden>No pudimos enviar tu consulta. Probá de nuevo en un momento o escribinos por WhatsApp.</p>
+        </form>
+
+        <form class="form" data-form data-form-panel="certificacion" aria-labelledby="tab-certificacion" hidden novalidate>
+          <label class="campo">
+            <span class="campo__label">Nombre y apellido</span>
+            <input name="nombre" type="text" placeholder="Tu nombre" required>
+          </label>
+          <label class="campo">
+            <span class="campo__label">WhatsApp</span>
+            <input name="tel" type="tel" placeholder="+54 9 ..." required>
+          </label>
+          <label class="campo">
+            <span class="campo__label">Email</span>
+            <input name="email" type="email" placeholder="hola@correo.com">
+          </label>
+          <label class="campo">
+            <span class="campo__label">¿Cuándo te gustaría empezar?</span>
+            <select name="disponibilidad">
+              <option>Próxima capacitación</option>
+              <option>En los próximos 3 meses</option>
+              <option>Todavía estoy averiguando</option>
+            </select>
+          </label>
+
+          <div class="campo campo--full">
+            <span class="campo__label">Tu experiencia con pilates</span>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="experiencia" value="Sin experiencia previa">Sin experiencia previa</label>
+              <label class="opcion"><input type="radio" name="experiencia" value="Practico pilates hace tiempo">Practico pilates hace tiempo</label>
+              <label class="opcion"><input type="radio" name="experiencia" value="Ya doy clases de otra disciplina">Ya doy clases de otra disciplina</label>
+            </div>
+          </div>
+
+          <label class="campo campo--full">
+            <span class="campo__label">Contanos por qué te querés certificar</span>
+            <textarea name="mensaje" rows="3" placeholder="Tu experiencia, tu disponibilidad horaria, qué te gustaría lograr…"></textarea>
+          </label>
+
+          <input type="hidden" name="tipo" value="certificacion">
+
+          <div class="form__pie">
+            <span class="form__aviso">Respondemos en menos de 24 h hábiles.</span>
+            <button class="btn btn--oscuro" type="submit">Enviar consulta</button>
+          </div>
+          <p class="form__error" data-form-error hidden>No pudimos enviar tu consulta. Probá de nuevo en un momento o escribinos por WhatsApp.</p>
+        </form>
+      </div>
 
       <div class="gracias" data-gracias hidden>
         <span class="gracias__titulo">Gracias, <span data-gracias-nombre></span></span>
         <p>Recibimos tu mensaje. Te escribimos dentro de las próximas 24 horas hábiles.</p>
-        <a class="btn btn--primario btn--compacto" href="https://wa.me/5492665322868?text=Hola!%20Tengo%20una%20consulta%20sobre%20el%20estudio" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+        <a class="enlace-subrayado" href="https://wa.me/5492665322868" target="_blank" rel="noopener">O escribinos ahora por WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- H. FOOTER -->
+  <!-- K. FOOTER -->
   <footer class="footer">
     <div class="contenedor">
       <div class="footer__inner">
@@ -327,9 +481,11 @@
         </div>
         <div class="footer__col">
           <span class="footer__titulo">Navegación</span>
-          <a href="#esencia">Nuestra esencia</a>
-          <a href="#porque">¿Por qué Equilibrate?</a>
-          <a href="#galeria">Galería</a>
+          <a href="#clases">Clases</a>
+          <a href="#membresia">Membresía</a>
+          <a href="#certificacion">Certificación</a>
+          <a href="#quienes-somos">Quiénes somos</a>
+          <a href="#ustedes">Ustedes</a>
           <a href="#contacto">Contacto</a>
         </div>
         <div class="footer__col">

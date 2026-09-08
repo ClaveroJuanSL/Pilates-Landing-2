@@ -45,14 +45,23 @@ async function enviarEmailNotificacion(datos) {
   }
 
   var esc = validate.escapeHtml;
+  var esCertificacion = datos.tipo === 'certificacion';
+
+  var camposEspecificos = esCertificacion
+    ? '<p><strong>Disponibilidad para empezar:</strong> ' + esc(datos.disponibilidad || '-') + '</p>' +
+      '<p><strong>Experiencia con pilates:</strong> ' + esc(datos.experiencia || '-') + '</p>'
+    : '<p><strong>Horario preferido:</strong> ' + esc(datos.horario || '-') + '</p>' +
+      '<p><strong>Experiencia previa:</strong> ' + esc(datos.nivel || '-') + '</p>';
+
   var html =
-    '<h2>Nueva consulta desde la web</h2>' +
+    '<h2>Nueva consulta desde la web (' + esc(esCertificacion ? 'Certificación de profesorado' : 'Clases') + ')</h2>' +
     '<p><strong>Nombre:</strong> ' + esc(datos.nombre) + '</p>' +
     '<p><strong>WhatsApp:</strong> ' + esc(datos.tel) + '</p>' +
     '<p><strong>Email:</strong> ' + esc(datos.email || '-') + '</p>' +
-    '<p><strong>Horario preferido:</strong> ' + esc(datos.horario || '-') + '</p>' +
-    '<p><strong>Experiencia previa:</strong> ' + esc(datos.nivel || '-') + '</p>' +
+    camposEspecificos +
     '<p><strong>Mensaje:</strong><br>' + esc(datos.mensaje || '-').replace(/\n/g, '<br>') + '</p>';
+
+  var subject = 'Nueva consulta de ' + (esCertificacion ? 'certificación de profesorado' : 'clases') + ' — ' + datos.nombre;
 
   var response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -64,7 +73,7 @@ async function enviarEmailNotificacion(datos) {
       from: from,
       to: to,
       reply_to: datos.email || undefined,
-      subject: 'Nueva consulta de ' + datos.nombre,
+      subject: subject,
       html: html
     })
   });

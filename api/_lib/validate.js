@@ -15,6 +15,10 @@ var HORARIOS = [
 
 var NIVELES = ['Nunca hice', 'Algo de experiencia', 'Practico hace años'];
 
+var TIPOS = ['clases', 'certificacion'];
+var EXPERIENCIAS = ['Sin experiencia previa', 'Practico pilates hace tiempo', 'Ya doy clases de otra disciplina'];
+var DISPONIBILIDAD = ['Próxima cohorte', 'En los próximos 3 meses', 'Todavía estoy averiguando'];
+
 var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 var PHONE_RE = /^[0-9+()\-\s]{6,30}$/;
 var CONTROL_CHARS_RE = new RegExp('[\\x00-\\x1F\\x7F]', 'g');
@@ -40,11 +44,14 @@ function escapeHtml(value) {
 function validateContactPayload(body) {
   if (!body || typeof body !== 'object') return { ok: false };
 
+  var tipo = TIPOS.indexOf(body.tipo) !== -1 ? body.tipo : 'clases';
   var nombre = sanitizeText(body.nombre, 100);
   var tel = sanitizeText(body.tel, 30);
   var email = sanitizeText(body.email, 150);
   var horario = sanitizeText(body.horario, 40);
   var nivel = sanitizeText(body.nivel, 40);
+  var experiencia = sanitizeText(body.experiencia, 60);
+  var disponibilidad = sanitizeText(body.disponibilidad, 40);
   var mensaje = sanitizeText(body.mensaje, 1000);
 
   if (!nombre || !tel) return { ok: false };
@@ -52,10 +59,22 @@ function validateContactPayload(body) {
   if (email && !EMAIL_RE.test(email)) return { ok: false };
   if (horario && HORARIOS.indexOf(horario) === -1) return { ok: false };
   if (nivel && NIVELES.indexOf(nivel) === -1) return { ok: false };
+  if (experiencia && EXPERIENCIAS.indexOf(experiencia) === -1) return { ok: false };
+  if (disponibilidad && DISPONIBILIDAD.indexOf(disponibilidad) === -1) return { ok: false };
 
   return {
     ok: true,
-    data: { nombre: nombre, tel: tel, email: email, horario: horario, nivel: nivel, mensaje: mensaje }
+    data: {
+      tipo: tipo,
+      nombre: nombre,
+      tel: tel,
+      email: email,
+      horario: horario,
+      nivel: nivel,
+      experiencia: experiencia,
+      disponibilidad: disponibilidad,
+      mensaje: mensaje
+    }
   };
 }
 

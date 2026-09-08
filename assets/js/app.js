@@ -2,6 +2,8 @@
    Equilibrate — app.js
    SOLO lógica de UI: animaciones de scroll, parallax, nav, carrusel y
    estados visuales del formulario.
+   La lógica de negocio (envío, persistencia, validación profunda, APIs)
+   está delegada a Claude Code — ver los TODO al final del archivo.
    ========================================================================== */
 
 (function () {
@@ -13,18 +15,18 @@
 
   function initNav() {
     var header = document.querySelector('[data-header]');
-    var nav = document.querySelector('[data-nav]');
+    var navMovil = document.querySelector('[data-nav-movil]');
     var toggle = document.querySelector('[data-nav-toggle]');
     if (!header) return;
 
-    if (toggle && nav) {
+    if (toggle && navMovil) {
       toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('is-open');
+        var open = navMovil.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', String(open));
       });
-      nav.addEventListener('click', function (e) {
+      navMovil.addEventListener('click', function (e) {
         if (e.target.closest('a')) {
-          nav.classList.remove('is-open');
+          navMovil.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
         }
       });
@@ -35,7 +37,7 @@
     };
   }
 
-  /*- Reveals --- */
+  /* ------------------------------------------------------------ Reveals --- */
 
   function initReveal() {
     var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
@@ -62,46 +64,36 @@
     };
   }
 
-  /* -- Parallax --- */
+  /* ----------------------------------------------------------- Parallax --- */
 
   function initParallax() {
     if (reduce) return null;
     if (window.matchMedia('(max-width: 780px)').matches) return null;
 
-    var hero = document.querySelector('[data-parallax="hero"]');
-    var esencia = document.querySelector('[data-parallax="esencia"]');
-    if (!hero && !esencia) return null;
+    var quienes = document.querySelector('[data-parallax="quienes"]');
+    if (!quienes) return null;
 
     return function onScrollParallax(vh) {
-      // Hero
-      if (hero) {
-        var sec = hero.closest('section') || hero;
-        var top = sec.getBoundingClientRect().top;
-        var t = Math.min(1, Math.max(0, -top / (vh * 0.8)));
-        var eased = t * t;
-        hero.style.transform =
-          'translate3d(0,' + (t * 90).toFixed(1) + 'px,0) scale(' + (1 - eased * 0.1).toFixed(3) + ')';
-        hero.style.opacity = Math.max(0, 1 - eased * 1.25).toFixed(3);
-      }
-
-      // Esencia: micro-parallax
-      if (esencia) {
-        var r = esencia.getBoundingClientRect();
-        var p = (r.top + r.height / 2 - vh / 2) / vh;
-        esencia.style.transform = 'translate3d(0,' + (-p * 26).toFixed(1) + 'px,0) scale(1.07)';
-      }
+      // Quiénes somos: micro-parallax de la foto dentro de su marco.
+      var r = quienes.getBoundingClientRect();
+      var p = (r.top + r.height / 2 - vh / 2) / vh;
+      quienes.style.transform = 'translate3d(0,' + (-p * 26).toFixed(1) + 'px,0) scale(1.07)';
     };
   }
 
   /* ------------------------------------------------- Historia (hero) ---- */
 
   function initHistoria() {
-    var DURACION = 4500;
-    var marco = document.querySelector('[data-historia]');
-    var riel = marco && marco.querySelector('[data-historia-riel]');
-    if (!marco || !riel) return;
+    var marcos = Array.prototype.slice.call(document.querySelectorAll('[data-historia]'));
+    marcos.forEach(initUnaHistoria);
+  }
 
-    var reales = Array.prototype.slice.call(riel.querySelectorAll('.hero__historia-slide'));
+  function initUnaHistoria(marco) {
+    var DURACION = 4500;
+    var riel = marco.querySelector('[data-historia-riel]');
+    if (!riel) return;
+
+    var reales = Array.prototype.slice.call(riel.children);
     var btnAnterior = marco.querySelector('[data-historia-prev]');
     var btnSiguiente = marco.querySelector('[data-historia-next]');
     var total = reales.length;
@@ -117,8 +109,8 @@
     riel.insertBefore(clonUltimo, reales[0]);
     riel.appendChild(clonPrimero);
 
-    var TRANSICION = 620; 
-    var posicion = 1;
+    var TRANSICION = 620; // un poco más que la transición CSS del riel (.6s)
+    var posicion = 1; // 0 = clon último, 1..total = reales, total+1 = clon primero
     var temporizador = null;
     var bloqueado = false;
 
@@ -172,7 +164,7 @@
   function initMarquee() {
     var track = document.querySelector('[data-marquee]');
     if (!track) return;
-   
+    // Duplicamos los items para que el loop del CSS (-50%) sea continuo.
     track.innerHTML += track.innerHTML;
   }
 
@@ -199,44 +191,72 @@
     tick();
   }
 
+  /* ------------------------------------------------------- Form tabs --- */
+
+  function initFormTabs() {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-form-tab]'));
+    var paneles = Array.prototype.slice.call(document.querySelectorAll('[data-form-panel]'));
+    if (!tabs.length || !paneles.length) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var destino = tab.getAttribute('data-form-tab');
+
+        tabs.forEach(function (t) {
+          var activo = t === tab;
+          t.classList.toggle('is-active', activo);
+          t.setAttribute('aria-selected', String(activo));
+        });
+
+        paneles.forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-form-panel') !== destino;
+        });
+      });
+    });
+  }
+
   /* ---------------------------------------------------------- Contacto --- */
 
   function initContactForm() {
-    var form = document.querySelector('[data-form]');
+    var forms = Array.prototype.slice.call(document.querySelectorAll('[data-form]'));
+    var wrapper = document.querySelector('[data-form-wrapper]');
     var gracias = document.querySelector('[data-gracias]');
     var nombreOut = document.querySelector('[data-gracias-nombre]');
-    var error = document.querySelector('[data-form-error]');
-    if (!form) return;
+    if (!forms.length) return;
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    forms.forEach(function (form) {
+      var error = form.querySelector('[data-form-error]');
 
-      if (error) error.hidden = true;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      var boton = form.querySelector('button[type="submit"]');
-      var textoOriginal = boton ? boton.textContent : '';
-      if (boton) {
-        boton.disabled = true;
-        boton.textContent = 'Enviando…';
-      }
+        if (error) error.hidden = true;
 
-      var datos = Object.fromEntries(new FormData(form).entries());
+        var boton = form.querySelector('button[type="submit"]');
+        var textoOriginal = boton ? boton.textContent : '';
+        if (boton) {
+          boton.disabled = true;
+          boton.textContent = 'Enviando…';
+        }
 
-      Promise.resolve(enviarConsulta(datos))
-        .then(function () {
-          if (nombreOut) {
-            nombreOut.textContent = String(datos.nombre || '').trim().split(' ')[0] || '';
-          }
-          form.hidden = true;
-          if (gracias) gracias.hidden = false;
-        })
-        .catch(function () {
-          if (boton) {
-            boton.disabled = false;
-            boton.textContent = textoOriginal;
-          }
-          if (error) error.hidden = false;
-        });
+        var datos = Object.fromEntries(new FormData(form).entries());
+
+        Promise.resolve(enviarConsulta(datos))
+          .then(function () {
+            if (nombreOut) {
+              nombreOut.textContent = String(datos.nombre || '').trim().split(' ')[0] || '';
+            }
+            if (wrapper) wrapper.hidden = true;
+            if (gracias) gracias.hidden = false;
+          })
+          .catch(function () {
+            if (boton) {
+              boton.disabled = false;
+              boton.textContent = textoOriginal;
+            }
+            if (error) error.hidden = false;
+          });
+      });
     });
   }
 
@@ -264,7 +284,7 @@
    * @returns {Promise<Array>}
    */
   function obtenerDisponibilidad() {
-    //Conectar endpoint del backend aquí.
+    // TODO [CLAUDE CODE]: Conectar endpoint del backend aquí.
     return Promise.resolve([]);
   }
 
@@ -273,7 +293,7 @@
    * @returns {Promise<Array>}
    */
   function obtenerMarcasAliadas() {
-    //Conectar endpoint del backend aquí.
+    // TODO [CLAUDE CODE]: Conectar endpoint del backend aquí.
     return Promise.resolve([]);
   }
 
@@ -282,6 +302,7 @@
   function init() {
     initMarquee();
     initHistoria();
+    initFormTabs();
     initContactForm();
     initScrollEngine([initNav(), initReveal(), initParallax()]);
   }

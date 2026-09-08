@@ -1,65 +1,72 @@
 # Equilibrate Studio Pilates
 
-**Landing page oficial** · Mitre 502, Edificio Don Jorge.
+**Landing page oficial — v4** · Mitre 502, Edificio Don Jorge.
 
 > "Tu momento de moverte."
 
-Equilibrate es un estudio de Pilates con 14 años de trayectoria, especializado en reformer clásico y contemporáneo, HIIT, Pilates para deportistas y Pilates terapéutico. Esta landing page traduce esa identidad (su manual de marca, su tono de voz y su comunidad) a una experiencia web rápida, cuidada y pensada para convertir visitas en primeras clases reservadas.
+Equilibrate es un estudio de Pilates con 13 años de trayectoria, especializado en reformer clásico y contemporáneo, clases para embarazadas, deportistas y HIIT, membresía de comunidad y un programa de certificación para futuras instructoras. Esta versión incorpora la ronda de correcciones del cliente sobre el sitio anterior (`landing-base3`): paleta de marca actualizada, logo nuevo, navegación con isotipo centrado y una estructura de secciones alineada a cómo el estudio se presenta hoy.
 
 ---
 
 ## La marca
 
-El sitio sigue al pie de la letra el manual de identidad de Equilibrate: mismo isotipo, misma paleta, misma tipografía y el mismo tono con el que la marca se presenta en sus redes y su estudio físico.
-
-**Paleta oficial**
+**Paleta oficial (actualizada 2026)** — el naranja `#D87848` pasa a ser el color principal; el marrón se usa con moderación, solo como ancla de contraste en un par de secciones oscuras.
 
 | | Color | Uso |
 |---|---|---|
-| 🟧 | `#C67B45` | Terracota, color principal |
-| 🟤 | `#8E492C` | Terracota oscuro, botones y acentos |
-| 🟠 | `#D79A6C` | Terracota claro, detalles sobre fondos oscuros |
-| 🟫 | `#D8C3B0` | Beige, fondo de secciones |
-| 🤎 | `#B98668` | Nude |
-| ⬜ | `#F1E5D9` | Crema, fondo principal |
+| 🟧 | `#D87848` | Naranja — color principal de marca |
+| 🟠 | `#E7713A` | Naranja vivo — acentos y franja de cifras |
+| 🟤 | `#C56236` | Naranja oscuro — hover de botones |
+| 🟫 | `#8E492C` | Terracota oscuro — panel de Certificación |
+| 🤎 | `#B98668` | Nude — soporte cálido |
+| ⬜ | `#F1E5D9` | Beige claro — fondo principal del sitio |
+| ⬜ | `#FDF9F5` | Crema — tarjetas y superficies |
+
+**Logo.** Isotipo (la flor) centrado en la barra de navegación; el logotipo completo (sin isotipo) aparece superpuesto sobre la foto grande del hero.
 
 **Tipografía**
 
-- **Montserrat**: títulos y el logotipo. Geométrica, cálida, cercana al Gotham de la identidad original.
-- **Anton**: cifras destacadas (años de trayectoria, instructoras, beneficios de la membresía).
+- **Montserrat**: títulos y el logotipo.
+- **Anton**: cifras destacadas.
 - **Manrope**: cuerpo de texto, navegación y formularios.
 
 **Voz**
 
-Cercana pero profesional. Con energía, sin gritar. Motiva sin exigir. La comunicación del sitio evita las frases genéricas de fitness ("transformá tu cuerpo", "sin excusas") y en su lugar habla de constancia, acompañamiento y de que cada cuerpo tiene su propio ritmo.
+Cercana pero profesional. Con energía, sin gritar. La comunicación evita las frases genéricas de fitness y habla de constancia, acompañamiento y de que cada cuerpo tiene su propio ritmo.
 
 ---
 
-## Recorrido del sitio
+## Navegación y recorrido del sitio
 
-**Portada.** Un carrusel de fotos tipo "páginas" (deslizamiento horizontal con botones a los costados) presenta el estudio en movimiento, junto a los datos que generan confianza a primera vista: 14 años, 7 instructoras, 2 salas.
+Barra fija con isotipo centrado: **Clases · Membresía · Certificación (flor) Quiénes somos · Ustedes · Reserva**.
 
-**Nuestra esencia.** La historia del estudio y su propuesta de valor, acompañada de una foto con un tratamiento visual propio (marco tipo cuadro enmarcado con panel de color detrás) para que no compita con la portada.
+**Hero.** Foto grande a página completa (carrusel automático) con el logotipo superpuesto y el mensaje "Desde 2012" — sin datos de dirección en la frase de apertura.
 
-**Por qué Equilibrate.** Los tres diferenciadores reales del estudio (clases para todos, atención personalizada, instalaciones) presentados como una pieza editorial en vez de tres tarjetas repetidas.
+**Franja de cifras.** Tira de color naranja entre el hero y el resto del sitio: 13 años de experiencia · 2 salas · instructoras certificadas.
 
-**Espacios.** Un mosaico de fotografías del estudio y de la marca, en distintos tamaños y proporciones para que la sección respire.
+**Clases.** Carrusel automático de fotos + los tres tipos de clase (reformer, embarazo/postparto, deportistas), con foco en que hay una clase para cada cuerpo.
 
-**Comunidad.** La membresía y sus beneficios, con el carrusel de marcas aliadas que suman valor extra a las socias.
+**Quiénes somos.** Historia del estudio y los tres diferenciadores reales (clases para todos, atención de excelencia, instalaciones), presentados como pieza editorial.
 
-**Visitanos.** Horarios, ubicación y un mapa estilizado con el pin del estudio.
+**Espacios.** Mosaico fotográfico del estudio.
 
-**Contacto.** Un formulario breve que deriva la consulta directo al mail del estudio, con confirmación por WhatsApp como alternativa inmediata.
+**Certificación.** Programa de formación para instructoras, con checklist del contenido y CTA directo a WhatsApp.
+
+**Membresía.** Beneficios de la comunidad y el carrusel de marcas aliadas.
+
+**Ustedes.** Testimonios reales de alumnas y alumnos.
+
+**Visítanos + Contacto.** Horarios, mapa estilizado y formulario de consulta conectado a una función serverless propia.
 
 ---
 
 ## Detalles de la experiencia
 
-- **Micro-interacciones con propósito.** Las secciones aparecen con una revelación suave al hacer scroll, el carrusel de la portada avanza solo y se puede pausar acercando el mouse, y todo respeta la preferencia de "reducir movimiento" del sistema operativo de quien visita el sitio.
+- **Micro-interacciones con propósito.** Revelado suave al hacer scroll, carruseles que avanzan solos y se pausan al pasar el mouse, respetando "reducir movimiento" del sistema operativo.
 - **Accesible por diseño.** Contraste de color verificado (AA), foco de teclado visible, formularios con etiquetas reales.
-- **Responsive de punta a punta.** Pensado primero para cada tamaño de pantalla, no solo adaptado.
-- **Formulario de contacto real.** Conectado a una función serverless propia que valida, filtra y envía la consulta por email, sin depender de servicios externos de formularios.
+- **Responsive de punta a punta.**
+- **Formulario de contacto real**, con validación, rate limiting y envío por email vía función serverless propia (sin servicios externos de formularios).
 
 ---
 
-*Sitio desarrollado a partir del manual de marca e identidad visual de Equilibrate Studio Pilates.*
+*Sitio desarrollado a partir del manual de marca e identidad visual de Equilibrate Studio Pilates y de la ronda de correcciones entregada por el cliente.*
