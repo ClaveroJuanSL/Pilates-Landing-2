@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { WHATSAPP_RESERVA } from "@/data/contacto";
-import fotoHero from "@/assets/img/hero.jpg";
+import fotoHero from "@/assets/img/hero-prueba3.jpg";
 import logoEquilibrate from "@/assets/img/logo-equilibrate.png";
 
 export default function Hero() {
@@ -9,14 +9,14 @@ export default function Hero() {
       <div className="hero__foto">
         {/* Es lo primero que se ve y lo más grande de la página (el "LCP"):
             se pide de inmediato y con prioridad alta, en vez de esperar.
-            Calidad 85 (el resto usa 75): a 75 la piel se veía "plastificada".
-            Para que funcione, 85 tiene que estar en images.qualities de
+            Calidad 95 (el resto usa 75): a 75 la piel se veía "plastificada".
+            Para que funcione, 95 tiene que estar en images.qualities de
             next.config.mjs; si no, Next la baja a 75 sin avisar. */}
         <Image
           src={fotoHero}
-          alt="Alumna sonriendo mientras entrena con el aro de pilates en Equilibrate"
+          alt="Alumna de espaldas estirando en el reformer con los brazos abiertos en Equilibrate"
           sizes="100vw"
-          quality={85}
+          quality={95}
           loading="eager"
           fetchPriority="high"
           placeholder="blur"

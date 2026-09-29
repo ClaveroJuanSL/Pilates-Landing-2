@@ -43,9 +43,9 @@ const nextConfig = {
     // Calidades de compresión permitidas para next/image.
     // Next 16 solo permite 75 por defecto, y si un <Image> pide otra que no
     // está en esta lista, la baja a la más cercana SIN AVISAR.
-    // 75 → todas las fotos. 85 → el hero, que es la foto más grande y a 75 se
+    // 75 → todas las fotos. 95 → el hero, que es la foto más grande y a 75 se
     // le perdía la textura de la piel.
-    qualities: [75, 85],
+    qualities: [75, 95],
   },
 
   // Se aplican a todas las rutas: páginas, imágenes y la API.
