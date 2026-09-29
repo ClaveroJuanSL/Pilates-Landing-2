@@ -1026,10 +1026,17 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   .seccion { padding-block: 96px; }
 
   .hero { padding-bottom: 32px; }
-  .hero__foto { height: 62vh; min-height: 420px; }
+  /* En celular el texto ocupa más alto: foto más alta y desvanecido más largo,
+     así el logo cae sobre el crema y no sobre el corte de la foto. */
+  .hero__foto {
+    height: 74vh;
+    min-height: 500px;
+    -webkit-mask-image: linear-gradient(180deg, #000 42%, rgba(0, 0, 0, .55) 62%, rgba(0, 0, 0, .15) 78%, transparent 90%);
+    mask-image: linear-gradient(180deg, #000 42%, rgba(0, 0, 0, .55) 62%, rgba(0, 0, 0, .15) 78%, transparent 90%);
+  }
   .hero__foto img { object-position: 38% 0%; }
-  .hero__inner { padding-top: max(calc(62vh - 80px), 340px); }
-  .hero__kicker { font-size: 16px; }
+  .hero__inner { padding-top: max(calc(74vh - 120px), 400px); }
+  .hero__kicker { font-size: 16px; color: var(--naranja-oscuro); }
   .hero__cta { font-size: 11px; letter-spacing: .14em; padding: 8px 18px; }
   .hero__destacado { grid-template-columns: 1fr; max-width: 420px; margin-top: 40px; }
   .hero__foto-chica { order: -1; height: 300px; margin-inline: 12% 0; }
