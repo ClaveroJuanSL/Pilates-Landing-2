@@ -1,10 +1,24 @@
 {
   "name": "equilibrate-estudio-de-pilates",
-  "private": true,
   "version": "1.0.0",
-  "description": "Landing page de Equilibrate Studio Pilates con Vercel Serverless Functions.",
+  "private": true,
+  "description": "Landing de Equilibrate Studio Pilates, hecha con Next.js.",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9"
   },
-  "scripts": {}
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6"
+  }
 }
