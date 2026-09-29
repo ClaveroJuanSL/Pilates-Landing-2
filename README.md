@@ -1,39 +1,73 @@
-# Equilibrate Studio Pilates — landing
+# Equilibrate Studio Pilates
 
-Sitio de Equilibrate (Mitre 502, Edificio Don Jorge), hecho con **Next.js 16** (App Router, JavaScript) y publicado en Vercel.
+**Sitio web oficial** · Mitre 502, Edificio Don Jorge.
 
-## Correr en local
+Equilibrate es un estudio de Pilates con 14 años de trayectoria, especializado en reformer clásico y contemporáneo, con clases para mujeres, hombres y embarazadas, una membresía de beneficios para su comunidad y un programa de certificación para futuras instructoras.
 
-```bash
-npm install
-npm run dev
-```
+Este sitio es la carta de presentación del estudio: cuenta quiénes son, muestra sus espacios y lleva a cada visitante a reservar su primera clase o a hacer una consulta.
 
-Abre en http://localhost:3000. Para probar la versión de producción: `npm run build` y después `npm run start`.
+---
 
-## Dónde está cada cosa
+## La marca
 
-| Carpeta | Qué tiene |
-|---|---|
-| `app/` | `layout.js` (estructura común, fuentes, metadatos), `page.js` (la página), `globals.css` (estilos) y `api/contact/route.js` (recibe el formulario) |
-| `components/` | Una pieza por sección. Solo `Header`, `FormularioContacto` y `Revelar` corren en el navegador (`"use client"`) |
-| `data/` | El contenido: `sitio.js` (clases, marcas, testimonios…), `contacto.js` (WhatsApp, Instagram, dirección, menú), `formulario.js` (opciones del formulario, compartidas con el servidor) |
-| `lib/` | Código del servidor: validación, límite de envíos y envío del email con Resend |
-| `assets/img/` | Imágenes. Se importan desde el código y Next las optimiza |
+**Paleta oficial.** El naranja es el color principal. El marrón se usa con moderación, solo como contraste en un par de secciones oscuras.
 
-Para cambiar textos, marcas o testimonios, en general alcanza con editar `data/`.
+| | Color | Uso |
+|---|---|---|
+| 🟧 | `#D87848` | Naranja: color principal de marca |
+| 🟠 | `#E7713A` | Naranja vivo: acentos y franja de cifras |
+| 🟤 | `#C56236` | Naranja oscuro: botones |
+| 🟫 | `#8E492C` | Terracota oscuro: panel de Certificación |
+| 🤎 | `#B98668` | Nude: soporte cálido |
+| ⬜ | `#F1E5D9` | Beige claro: fondo principal |
+| ⬜ | `#FDF9F5` | Crema: tarjetas y superficies |
 
-## Variables de entorno
+**Tipografía**
 
-Van en `.env.local` (nunca se sube a Git) y en Vercel → Settings → Environment Variables:
+- **Montserrat**: títulos.
+- **Anton**: cifras destacadas.
+- **Manrope**: textos, navegación y formularios.
 
-| Variable | Para qué |
-|---|---|
-| `RESEND_API_KEY` | Clave de Resend para mandar el email |
-| `CONTACT_TO_EMAIL` | A quién le llegan las consultas |
-| `CONTACT_FROM_EMAIL` | Remitente (dominio verificado en Resend) |
-| `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_MS` | Opcionales. Por defecto: 5 envíos cada 10 minutos por IP |
+**Voz.** Cercana pero profesional, con energía y sin gritar. Evita las frases genéricas de fitness y habla de constancia, de acompañamiento y de que cada cuerpo tiene su propio ritmo.
 
-## Seguridad
+---
 
-Los encabezados de seguridad (Content-Security-Policy y otros) están en `next.config.mjs`.
+## Recorrido del sitio
+
+**Inicio.** Foto a página completa con el logotipo de Equilibrate y un acceso directo para reservar la primera clase.
+
+**Franja de cifras.** 14 años de experiencia · Instructoras certificadas · 2 salas.
+
+**Clases.** Las tres propuestas del estudio: mujeres, hombres y embarazadas.
+
+**Membresía.** Los beneficios de ser parte de la comunidad y el carrusel de marcas aliadas.
+
+**Certificación.** El programa de formación de instructoras: qué se aprende, cómo se cursa y contacto directo por WhatsApp.
+
+**Espacios.** Mosaico fotográfico de las salas y de la gente que las habita.
+
+**Ustedes.** Testimonios reales de alumnas y alumnos.
+
+**Visítanos.** Dirección, horarios y ubicación en Google Maps.
+
+**Contacto.** Formulario de consulta para clases o para la certificación.
+
+---
+
+## La experiencia
+
+- **Pensado para el celular.** La mayoría de las visitas llegan desde Instagram y WhatsApp, así que cada sección está diseñada primero para pantallas chicas.
+- **Rápido.** Las imágenes se adaptan al tamaño de cada pantalla y las fuentes se sirven desde el propio sitio.
+- **Movimiento con propósito.** Las secciones aparecen suavemente al hacer scroll y el carrusel de marcas se detiene al pasar el mouse. Si el dispositivo tiene activada la opción "reducir movimiento", las animaciones se desactivan.
+- **Accesible.** Contraste de color verificado, foco de teclado visible y formularios con etiquetas reales.
+- **Contacto directo.** Cada botón de WhatsApp abre el chat con un mensaje ya escrito según lo que la persona quiere hacer.
+
+---
+
+## Tecnología
+
+Desarrollado con [Next.js](https://nextjs.org) y publicado en [Vercel](https://vercel.com).
+
+---
+
+*Sitio desarrollado a partir del manual de marca e identidad visual de Equilibrate Studio Pilates.*
