@@ -85,8 +85,8 @@ export const CERTIFICACION_PUNTOS = [
   "Método reformer clásico y contemporáneo",
   "Prácticas supervisadas en nuestras salas",
   "Anatomía aplicada y biomecánica del movimiento",
-  "Certificado avalado por Equilibrate al finalizar",
-  "Grupos reducidos, cupos limitados por cohorte",
+  "Certificado avalado al finalizar cada nivel",
+  "Grupos reducidos. Cupos limitados por nivel",
 ];
 
 // --- Espacios -----------------------------------------------------------------
@@ -102,17 +102,28 @@ export const ESPACIOS = [
 
 // --- Testimonios --------------------------------------------------------------
 
+// Reseñas reales de Google Maps (5 estrellas), copiadas textuales.
+// Solo nombre e inicial del apellido, como se suele mostrar en una web.
 export const TESTIMONIOS = [
   {
-    texto: "Empecé para cuidar la espalda y hoy es la hora de la semana que más me acomoda la cabeza. Las profes te conocen de verdad.",
-    autor: "Alumna, 3 años en Equilibrate",
+    texto: "Hace 7 meses que voy y estoy súper contenta. Me encanta el lugar y, sobre todo, la buena onda que hay. Las profesoras son excelentes, tienen mucha paciencia y explican cada ejercicio súper bien, siempre atentas a que hagamos los movimientos correctamente. La verdad es que la paso re bien en cada clase y da gusto ir. ¡Súper recomendable!",
+    autor: "Juana D.",
   },
   {
-    texto: "Vine embarazada y seguí después del parto. Nunca sentí que el grupo fuera para ‘otro tipo’ de cuerpo. Es para el mío, en cada etapa.",
-    autor: "Alumna, clases de embarazo y postparto",
+    texto: "Excelente atención, excelentes instructoras, excelente nivel, muy conforme con ellas, con la dueña, con el lugar. Siempre impecable y prolijo todo. Siempre cuidándonos!!!",
+    autor: "Silvia R.",
   },
   {
-    texto: "Entreno rugby y sumé pilates para la prevención de lesiones. Se nota en la cancha y en cómo duermo la noche después.",
-    autor: "Alumno, clases para deportistas",
+    texto: "Es un excelente lugar para practicar pilates, las profes se capacitan permanentemente y son muy amables y amorosas. Fui durante mí primer embarazo y me cuidaron un montón. Seguiría yendo pero me mudé y ahora me queda muy lejos. Fue una de las mejores experiencias de actividad física que he tenido.",
+    autor: "Cecilia H.",
+  },
+  {
+    texto: "El mejor studio de pilates!! Hace 20 años hago pilates, hace casi 4 años vine a vivir a San Luis y conocí Equilibrate. La atención y el cuidado de las instructoras para con cada alumno/a es impecable, siempre atentas a los ejercicios, con una sonrisa!! Felicitaciones y a seguir muchos años más!",
+    autor: "Natalia",
   },
 ];
+
+// Ficha de Google Maps abierta en la pestaña de opiniones (desde ahí se
+// escribe una reseña nueva). Sin los parámetros de seguimiento del link original.
+export const GOOGLE_RESENAS =
+  "https://www.google.com/maps/place/Equilibrate+Studio+Pilates/@-33.3061926,-66.3394199,17z/data=!4m8!3m7!1s0x95d439561e7c7413:0xc81ffc43098e8708!8m2!3d-33.3061926!4d-66.3394199!9m1!1b1!16s%2Fg%2F11hbn1nltn";

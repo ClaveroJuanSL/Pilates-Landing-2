@@ -522,35 +522,32 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 }
 .membresia .contenedor { position: relative; }
 
-.membresia__intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 60px;
-  align-items: end;
+/* Caja de texto que abre el mosaico: el título grande de la sección vive
+   adentro de la tarjeta, al lado del carrusel de eventos. */
+.membresia__caja--intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  padding: clamp(36px, 4.4vw, 60px);
+  background: var(--crema);
+  border: 1px solid rgba(185, 134, 104, .3);
 }
 .membresia__titulo {
   margin: 0;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(56px, 8.6vw, 128px);
+  font-size: clamp(44px, 5vw, 72px);
   line-height: .9;
   letter-spacing: -.045em;
   color: var(--naranja);
-  grid-column: 1 / -1;
-  text-align: center;
-}
-.membresia__texto {
-  grid-column: 1 / -1;
-  max-width: 640px;
-  margin-inline: auto;
-  text-align: center;
 }
 .membresia__texto p {
   margin: 0;
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(16px, 1.45vw, 19px);
-  line-height: 1.4;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.45;
   letter-spacing: -.01em;
   color: var(--terracota-oscuro);
   text-wrap: pretty;
@@ -616,17 +613,20 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   .marquee__item { margin-right: 28px; }
 }
 
-.membresia__mosaico { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 90px; }
+.membresia__mosaico { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .membresia__caja { margin: 0; border-radius: 10px; overflow: hidden; min-height: 200px; }
+/* La foto toma el alto de la tarjeta de al lado (la fila de la grilla se
+   estira), así las dos cajas quedan iguales. La imagen va absoluta para que
+   su tamaño natural no agrande la fila. */
 .membresia__caja--foto {
-  height: 300px;
-  min-height: 0;
+  position: relative;
+  min-height: 300px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.membresia__caja--foto img { width: 100%; height: 100%; object-fit: cover; }
+.membresia__caja--foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .membresia__caja--texto {
   padding: 38px 34px;
   display: flex;
@@ -646,12 +646,94 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 }
 .membresia__caja--texto p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--texto); }
 
+/* Carrusel de eventos: las fotos se apilan y se funden una sobre otra. La que
+   entra hace un zoom muy lento hacia atrás para que no quede estática. */
+.membresia__caja--carrusel { height: clamp(520px, 46vw, 620px); min-height: 0; }
+.carrusel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: var(--beige-claro);
+  isolation: isolate;
+}
+.carrusel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.1s cubic-bezier(.4, 0, .2, 1);
+}
+.carrusel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: transform 6.5s cubic-bezier(.16, 1, .3, 1);
+}
+.carrusel__slide--activa { opacity: 1; z-index: 1; }
+.carrusel__slide--saliente { opacity: 1; transition: none; }
+.carrusel__slide--activa img { transform: scale(1); }
+/* Degradé abajo para que los controles se lean sobre cualquier foto. */
+.carrusel::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 34%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(46, 32, 24, .45));
+}
+.carrusel__pie {
+  position: absolute;
+  inset: auto 22px 20px 22px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.carrusel__puntos { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.carrusel__punto {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 100px;
+  background: rgba(255, 250, 244, .55);
+  cursor: pointer;
+  transition: width .5s cubic-bezier(.16, 1, .3, 1), background .3s ease;
+}
+.carrusel__punto:hover { background: rgba(255, 250, 244, .85); }
+.carrusel__punto--activo { width: 26px; background: var(--crema); }
+.carrusel__flechas { display: flex; gap: 8px; flex: none; }
+.carrusel__flecha {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 250, 244, .5);
+  border-radius: 50%;
+  background: rgba(255, 250, 244, .16);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--crema);
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.carrusel__flecha:hover { background: var(--crema); color: var(--naranja); transform: translateY(-1px); }
+.carrusel__flecha svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.carrusel__punto:focus-visible, .carrusel__flecha:focus-visible { outline: 2px solid var(--crema); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .carrusel__slide, .carrusel__slide img { transition: none; }
+  .carrusel__slide img { transform: none; }
+}
+
 /* --- Ustedes (testimonios) ---------------------------------------------------- */
 
 .ustedes { background: var(--beige-medio); }
 .ustedes__head { text-align: center; margin-bottom: 72px; }
 .ustedes__head .titulo-seccion { margin-inline: auto; }
-.ustedes__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.ustedes__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 1040px; margin-inline: auto; }
 
 .testimonio {
   margin: 0;
@@ -672,7 +754,34 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   margin-bottom: 4px;
 }
 .testimonio p { margin: 0; font-size: 16.5px; line-height: 1.7; color: var(--texto); text-wrap: pretty; }
-.testimonio footer { margin-top: 22px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-tenue); }
+.testimonio { display: flex; flex-direction: column; }
+.testimonio p { flex: 1; }
+.testimonio footer {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(226, 205, 187, .9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texto-tenue);
+}
+.testimonio__fuente { display: inline-flex; align-items: center; gap: 10px; letter-spacing: .04em; text-transform: none; }
+.testimonio__estrellas { display: inline-flex; gap: 2px; color: var(--naranja); }
+.testimonio__estrellas svg { width: 14px; height: 14px; fill: currentColor; }
+
+.ustedes__cta {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+.ustedes__cta p { margin: 0; font-size: 16px; color: var(--texto-tenue); }
 
 /* --- Visitanos + mapa ----------------------------------------------------- */
 
@@ -965,10 +1074,8 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 
 @media (max-width: 1080px) {
   .certificacion__inner { grid-template-columns: 1fr; gap: 56px; }
-  .membresia__intro { grid-template-columns: 1fr; gap: 28px; }
   .visitanos__inner { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
-  .ustedes__grid { grid-template-columns: 1fr 1fr; }
   .espacios__grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 200px 200px;
@@ -1073,6 +1180,8 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   .certificacion__lista { gap: 16px; }
   .ustedes__grid { grid-template-columns: 1fr; }
   .membresia__mosaico { grid-template-columns: 1fr; }
+  .membresia__caja--carrusel { height: auto; aspect-ratio: 4 / 5; }
+  .membresia__caja--carrusel + .membresia__caja--intro { order: -1; } /* en una columna, "Tus beneficios" abre la sección */
   .form { padding: 36px 26px 40px; grid-template-columns: 1fr; gap: 26px; }
   .campo--full, .form__pie, .form__error { grid-column: span 1; }
   .footer__inner { grid-template-columns: 1fr; gap: 40px; }

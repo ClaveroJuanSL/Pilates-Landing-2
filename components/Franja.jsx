@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import logoIcon from "@/assets/img/logo-icon.png";
 
-const CIFRAS = ["14 años de experiencia", "Instructoras certificadas", "2 salas"];
+const CIFRAS = ["Mas de 10 años de experiencia", "Instructoras certificadas", "2 salas"];
 
 export default function Franja() {
   return (

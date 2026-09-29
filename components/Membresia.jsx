@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MARCAS } from "@/data/sitio";
-import mosaico1 from "@/assets/img/membresia-mosaico-1.jpg";
+import CarruselEventos from "@/components/CarruselEventos";
 import mosaico2 from "@/assets/img/membresia-mosaico-2.jpg";
 
 // Mosaico: 2 columnas de 570px en escritorio, mitad de pantalla en tablet
@@ -39,35 +39,25 @@ export default function Membresia() {
   return (
     <section className="membresia" id="membresia">
       <div className="contenedor">
-        <div className="membresia__intro">
-          {/* Ilustración de línea del aro de pilates (pendiente: agregar cuando la clienta la envíe) */}
-          <h2 data-reveal className="membresia__titulo">
-            Tus <span>beneficios</span>
-          </h2>
-          <div data-reveal className="membresia__texto">
-            <p>
-              Todos los meses, al ser parte de Equilibrate, nuestros alumnos cuentan con un sistema de membresía que
-              brinda beneficios en salud, bienestar y deporte.
-            </p>
-            <p>
-              Y la posibilidad de presenciar con ingreso exclusivo los eventos organizados mensualmente, en donde los
-              protagonistas son las marcas de la membresía.
-            </p>
-          </div>
-        </div>
-
         <div className="membresia__mosaico">
-          <figure data-reveal className="membresia__caja membresia__caja--foto">
-            <Image
-              src={mosaico1}
-              alt="Alumno haciendo pilates en el reformer"
-              sizes={SIZES_MOSAICO}
-              placeholder="blur"
-            />
-          </figure>
-          <div data-reveal className="membresia__caja membresia__caja--texto">
-            <h3>Comunidad que suma</h3>
-            <p>Más de 20 marcas aliadas en bienestar, deporte y salud, con 12 beneficios nuevos cada mes para las socias.</p>
+          <div data-reveal className="membresia__caja membresia__caja--carrusel">
+            <CarruselEventos />
+          </div>
+          <div data-reveal className="membresia__caja membresia__caja--intro">
+            {/* Ilustración de línea del aro de pilates (pendiente: agregar cuando la clienta la envíe) */}
+            <h2 className="membresia__titulo">
+              Tus <span>beneficios</span>
+            </h2>
+            <div className="membresia__texto">
+              <p>
+                Todos los meses, al ser parte de Equilibrate, nuestros alumnos cuentan con un sistema de membresía que
+                brinda beneficios en salud, bienestar y deporte.
+              </p>
+              <p>
+                Y la posibilidad de presenciar con ingreso exclusivo los eventos organizados mensualmente, en donde los
+                protagonistas son las marcas de la membresía.
+              </p>
+            </div>
           </div>
 
           <div data-reveal className="membresia__marcas">
@@ -75,9 +65,11 @@ export default function Membresia() {
             <CarruselMarcas />
           </div>
 
-          <div data-reveal className="membresia__caja membresia__caja--texto">
-            <h3>Grupos cuidados</h3>
-            <p>Encuentros de comunidad cada trimestre y un máximo de 1 instructora cada 7 alumnas, siempre.</p>
+          <div data-reveal className="membresia__caja membresia__caja--intro">
+            <h3 className="membresia__titulo">Grupos cuidados</h3>
+            <div className="membresia__texto">
+              <p>Contamos con instructoras certificadas y capacitadas para llevar adelante clases adaptadas a tu capacidad fisica. Nuestras clases cuentan con cupos máximos de 8 personas por sala. Para brindar un entrenamiento cuidado</p>
+            </div>
           </div>
           <figure data-reveal className="membresia__caja membresia__caja--foto">
             <Image

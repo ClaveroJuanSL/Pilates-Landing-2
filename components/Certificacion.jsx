@@ -8,16 +8,15 @@ export default function Certificacion() {
         <div>
           <span data-reveal className="eyebrow certificacion__eyebrow">Formación profesional</span>
           <h2 data-reveal className="titulo-seccion certificacion__titulo">
-            Formate como <em>instructora certificada</em>
+            Formate como <em>instructor certificado</em>
           </h2>
           <p data-reveal className="certificacion__texto">
-            14 años de experiencia dando clase nos permiten formar a la próxima generación de instructoras. Un programa
-            teórico-práctico, con clases en vivo sobre alumnas reales y acompañamiento hasta tu primera clase dictada.
+            Mas de 10 años de experiencia dando clases nos permiten formar a la próxima generación de instructores. Un programa teórico-práctico, con clases en vivo, practicas en nuestro estudio, beneficios en nuestras clases y acompañamiento hasta tu primera clase dictada.
           </p>
           <div data-reveal className="certificacion__acciones">
             <a
               className="btn btn--primario"
-              href={whatsappCon("Hola, quiero información sobre la certificación de instructoras")}
+              href={whatsappCon("Hola, quiero información sobre la certificación de instructores")}
               target="_blank"
               rel="noopener"
             >
