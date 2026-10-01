@@ -31,9 +31,9 @@ import marcaNibs from "@/assets/img/marcas/nibs.png";
 import marcaNutravida from "@/assets/img/marcas/nutravida.png";
 import marcaOnesport from "@/assets/img/marcas/onesport.png";
 import marcaVisitResto from "@/assets/img/marcas/visit-resto.png";
-import espacios6 from "@/assets/img/espacios-6.jpg";
-import espacios1 from "@/assets/img/espacios-1.jpg";
-import espacios2 from "@/assets/img/espacios-2.jpg";
+import espaciosClases6 from "@/assets/img/espacios-clases-6.jpg";
+import espaciosClases3 from "@/assets/img/espacios-clases-3.jpg";
+import espaciosProfe2 from "@/assets/img/espacios-profe-2.jpg";
 import espacios4 from "@/assets/img/espacios-4.jpg";
 import espacios5 from "@/assets/img/espacios-5.jpg";
 
@@ -93,9 +93,11 @@ export const CERTIFICACION_PUNTOS = [
 // `variante` es la posición en la grilla del CSS: .foto--g, .foto--v, etc.
 
 export const ESPACIOS = [
-  { variante: "g", foto: espacios6, alt: "Instructora dirigiendo una clase en una de nuestras salas" },
-  { variante: "v", foto: espacios1, alt: "Detalle del aro y la pelota de pilates" },
-  { variante: "w", foto: espacios2, alt: "Alumna elongando junto al reformer" },
+  // posicion (opcional): qué parte de la foto queda a la vista cuando el
+  // recuadro la recorta. "50% 25%" = centrada y un poco hacia arriba.
+  { variante: "g", foto: espaciosClases6, alt: "Alumnas elongando en los reformers de la sala", posicion: "50% 25%" },
+  { variante: "v", foto: espaciosProfe2, alt: "Instructora corrigiendo la postura de una alumna con una pelota" },
+  { variante: "w", foto: espaciosClases3, alt: "Alumna en el reformer con los brazos abiertos y una pelota", posicion: "50% 62%" },
   { variante: "s1", foto: espacios4, alt: "Alumna mayor en clase de pilates" },
   { variante: "s2", foto: espacios5, alt: "Alumno haciendo pilates en el reformer" },
 ];

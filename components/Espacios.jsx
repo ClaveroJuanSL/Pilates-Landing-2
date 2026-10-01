@@ -27,7 +27,14 @@ export default function Espacios() {
           {ESPACIOS.map((espacio) => (
             // La clase se arma con un template string: "foto foto--g", "foto foto--v"...
             <figure data-reveal key={espacio.variante} className={`foto foto--${espacio.variante}`}>
-              <Image src={espacio.foto} alt={espacio.alt} sizes={SIZES[espacio.variante]} placeholder="blur" />
+              <Image
+                src={espacio.foto}
+                alt={espacio.alt}
+                sizes={SIZES[espacio.variante]}
+                quality={90}
+                placeholder="blur"
+                style={espacio.posicion ? { objectPosition: espacio.posicion } : undefined}
+              />
             </figure>
           ))}
         </div>

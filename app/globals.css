@@ -90,6 +90,11 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   color: var(--marron);
 }
 .titulo-seccion em { font-style: normal; font-weight: 800; color: var(--naranja); }
+/* Pedido de la clienta: estos títulos en terracota en vez de marrón oscuro. */
+.espacios .titulo-seccion,
+.ustedes .titulo-seccion,
+.visitanos .titulo-seccion,
+.contacto .titulo-seccion { color: var(--terracota-oscuro); }
 
 .parrafo {
   font-size: 19px;
@@ -432,7 +437,7 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 
 .espacios { background: var(--crema); padding-bottom: 150px; }
 .espacios__head { text-align: center; margin-bottom: 72px; }
-.espacios__head .titulo-seccion { margin-inline: auto; max-width: 22ch; }
+.espacios__head .titulo-seccion { margin-inline: auto; }
 .espacios__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -798,54 +803,70 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
 .ficha p:last-of-type { margin: 0; font-size: 15px; line-height: 1.7; color: var(--texto); }
 .ficha .enlace-subrayado { margin-top: 16px; }
 
-.ficha--foto {
-  position: relative;
-  isolation: isolate;
-  min-height: 340px;
-  padding: 38px;
-  display: flex;
-  align-items: flex-end;
+/* Ficha de horarios: cuadro de color suave (antes era una foto con un
+   degradé oscuro encima, por eso tenía los textos claros). */
+/* El título va todo en terracota: el naranja sobre este fondo se lavaba. */
+.ficha--horarios {
+  padding: 40px 38px 34px;
+  background: #D8C3B0;
   border: none;
-  overflow: hidden;
 }
-.ficha__foto {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 30%;
-  z-index: -2;
+.horarios__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
-.ficha--foto::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(195deg, rgba(32, 21, 16, .1) 6%, rgba(32, 21, 16, .68) 60%, rgba(32, 21, 16, .92) 100%);
-  z-index: -1;
+.horarios__label { margin: 0; color: var(--terracota-oscuro); }
+.horarios__icono {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--terracota-oscuro);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .75;
 }
-.ficha__contenido { position: relative; }
-.ficha__label--claro { color: var(--naranja-vivo); }
-.ficha__titulo-foto {
-  margin: 0 0 22px;
+.horarios__titulo {
+  margin: 0 0 26px;
   font-family: var(--display);
   font-size: 34px;
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--crema);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  color: var(--terracota-oscuro);
 }
-.ficha__titulo-foto em { font-style: normal; font-weight: 700; color: var(--naranja-vivo); }
-.ficha__horario {
+.horarios__lista { margin: 0; border-top: 1px solid rgba(142, 73, 44, .28); }
+.horarios__fila {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  color: var(--crema);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(142, 73, 44, .28);
 }
-.ficha__horario + .ficha__horario { margin-top: 10px; }
-.ficha__horario--tenue { color: rgba(250, 243, 236, .68); }
-.ficha__horario .punto { width: 7px; height: 7px; border-radius: 50%; background: var(--naranja-vivo); flex: none; }
-.ficha__horario .punto--tenue { background: rgba(250, 243, 236, .4); }
+.horarios__fila dt {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--marron);
+}
+.horarios__fila dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--terracota-oscuro);
+  text-align: right;
+  white-space: nowrap;
+}
+.horarios__fila .horarios__consultar {
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(46, 32, 24, .62);
+}
 
 .mapa {
   display: block;
@@ -1167,8 +1188,8 @@ input, textarea, select, button { font-family: inherit; font-size: inherit; colo
   .clases__grid::-webkit-scrollbar { display: none; }
   .clase-card { scroll-snap-align: center; }
   .clases__pill { margin-top: 28px; font-size: 13px; padding: 12px 22px; }
-  .ficha--foto { min-height: 280px; padding: 30px; }
-  .ficha__titulo-foto { font-size: 28px; }
+  .ficha--horarios { padding: 32px 26px 26px; }
+  .horarios__titulo { font-size: 28px; }
   .espacios__grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 200px 200px 160px;

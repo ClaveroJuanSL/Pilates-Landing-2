@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { DIRECCION, MAPS } from "@/data/contacto";
-import Image from "next/image";
-import fotoMat from "@/assets/img/visitanos-mat.jpg";
 
 // El "mapa" es una ilustración hecha con divs y CSS, no un mapa real:
 // al hacer clic abre Google Maps.
@@ -48,28 +46,27 @@ export default function Visitanos() {
 
         <div className="visitanos__inner">
           <div data-reveal className="visitanos__datos">
-            <div className="ficha ficha--foto">
-              <Image
-                className="ficha__foto"
-                src={fotoMat}
-                alt="Aro y pelota de pilates listos para la clase"
-                sizes="(max-width: 1080px) 100vw, 481px"
-                placeholder="blur"
-              />
-              <div className="ficha__contenido">
-                <span className="ficha__label ficha__label--claro">Horarios</span>
-                <div className="ficha__titulo-foto">
-                  Nuestra <em>disponibilidad</em>
-                </div>
-                <div className="ficha__horario">
-                  <span className="punto" />
-                  <span>Lunes a viernes · 7:00 a 21:00 h</span>
-                </div>
-                <div className="ficha__horario ficha__horario--tenue">
-                  <span className="punto punto--tenue" />
-                  <span>Sábados: consultar disponibilidad</span>
-                </div>
+            <div className="ficha ficha--horarios">
+              <div className="horarios__cabecera">
+                <span className="ficha__label horarios__label">Horarios</span>
+                <svg className="horarios__icono" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
               </div>
+              <h3 className="horarios__titulo">Nuestra disponibilidad</h3>
+
+              {/* Lista de definiciones: el día a la izquierda, el horario a la derecha. */}
+              <dl className="horarios__lista">
+                <div className="horarios__fila">
+                  <dt>Lunes a viernes</dt>
+                  <dd>7:00 a 21:00 h</dd>
+                </div>
+                <div className="horarios__fila">
+                  <dt>Sábados</dt>
+                  <dd className="horarios__consultar">Consultar disponibilidad</dd>
+                </div>
+              </dl>
             </div>
 
             <div className="ficha">
