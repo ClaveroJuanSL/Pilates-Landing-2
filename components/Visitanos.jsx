@@ -40,7 +40,7 @@ export default function Visitanos() {
       <div className="contenedor">
         <div className="visitanos__head">
           <h2 data-reveal className="titulo-seccion">
-            Empezá <em>hoy</em> tu camino
+            Empezá <em>hoy</em>
           </h2>
         </div>
 

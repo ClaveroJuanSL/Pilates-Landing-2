@@ -14,7 +14,7 @@
 // más chicas y un placeholder borroso. Si una ruta está mal, el build falla
 // en vez de mostrar una imagen rota en producción.
 
-import clasesGeneral from "@/assets/img/clases-general.jpg";
+import clasesGeneral from "@/assets/img/clases-mujeres.jpg";
 import clasesHombres from "@/assets/img/clases-hombres.jpg";
 import clasesEmbarazo from "@/assets/img/clases-embarazo.jpg";
 import marcaAlondra from "@/assets/img/marcas/alondra.png";
@@ -43,7 +43,7 @@ import espacios5 from "@/assets/img/espacios-5.jpg";
 export const CLASES = [
   {
     foto: clasesGeneral,
-    alt: "Alumnas en una clase de pilates reformer",
+    alt: "Alumna sonriendo en el reformer durante la clase",
     rotulo: ["Muje", "res"],
   },
   {
